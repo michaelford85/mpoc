@@ -22,10 +22,10 @@
 #   set_fact:
 #     version: "{{ output.stdout[0] | regex_search('Version (\\S+)', '\\1') | first }}"
 
-- name: print hostname
+- name: print router status
   debug:
     msg:
       - "Hostname: {{ ansible_net_hostname }}"
-      # - "Model Number: {{ model_number }}"
-      # - "Software Version: {{ version }}"
-      # - "Interfaces: {{ interfaces }}"
+      - "Model Number: {{ ansible_net_model }}"
+      - "Software Version: {{ ansible_net_version }}"
+      - "Serial Number: {{ ansible_net_serialnum}}"
