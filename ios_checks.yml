@@ -11,4 +11,6 @@
     - name: Perform IOS checks
       include_role:
         name: ios_checks
+      vars:
+        router: "{{ item }}"
       with_items: "{{ groups['cisco'] }}"
