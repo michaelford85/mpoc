@@ -8,9 +8,14 @@
 
   tasks:
 
-    - name: Perform IOS checks
-      include_role:
-        name: ios_checks
-      vars:
-        router: "{{ item }}"
+    - name: debug router names
+      debug:
+        var: "{{item}}"
       with_items: "{{ groups['cisco'] }}"
+
+    # - name: Perform IOS checks
+    #   include_role:
+    #     name: ios_checks
+    #   vars:
+    #     router: "{{ item }}"
+    #   with_items: "{{ groups['cisco'] }}"
