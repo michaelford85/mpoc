@@ -18,7 +18,7 @@
 - name: Show router status
   debug:
     msg:
-      - "Hostname: {{ facts_output.ansible_net_hostname }}"
+      #- "Hostname: {{ facts_output.ansible_net_hostname }}"
       - "IOS Version: {{ facts_output.ansible_net_version }}"
 # - name: Show router status
 #   ios_command:
