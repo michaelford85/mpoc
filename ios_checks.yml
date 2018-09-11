@@ -11,4 +11,4 @@
     - name: Perform IOS checks
       include_role:
         name: ios_checks
-      with_items: "{{ groups.cisco }}"
+      with_items: "{{ groups['cisco'] }}"
