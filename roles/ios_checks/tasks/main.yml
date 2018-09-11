@@ -4,11 +4,11 @@
 
 - name: collect output from ios device
   ios_facts:
-  register: output
-
-- name: set hostname fact
-  set_fact:
-    hostname: "{{ output.ansible_net_hostname }}"
+#   register: output
+#
+# - name: set hostname fact
+#   set_fact:
+#     hostname: "{{ output.ansible_net_hostname }}"
 
 # - name: set model number
 #   set_fact:
@@ -25,7 +25,7 @@
 - name: print hostname
   debug:
     msg:
-      - "Hostname: {{ hostname }}"
+      - "Hostname: {{ ansible_net_hostname }}"
       # - "Model Number: {{ model_number }}"
       # - "Software Version: {{ version }}"
       # - "Interfaces: {{ interfaces }}"
