@@ -8,16 +8,8 @@
 
   tasks:
 
-  - name: collect output from ios device
-    ios_command:
-      commands:
-        - show version
-        - show interface
-        - show running-config all
-        - show ip interface brief
-    register: output
 
-  - name: Show output
-    debug:
-      # msg: "{{ output.stdout[0] | regex_findall('\\s+Device name:\\s+(\\S+)') | first }}"
-      msg: "{{ output.stdout[0] }}"
+
+  - name: Call ios_checks role
+    include_role:
+      name: ios_checks
