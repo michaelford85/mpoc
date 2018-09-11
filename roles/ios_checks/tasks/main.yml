@@ -14,5 +14,5 @@
 - name: Show output
   debug:
     #msg: "{{ output.stdout[2] | regex_findall('\\s+hostname \\s+(\\S+)') | first }}"
-    msg: "{{ output.stdout[2] | regex_findall('hostname \\s+(\\S+)') | first }}"
+    msg: "{{ output.stdout[2] | regex_findall('hostname') | first }}"
     #msg: "{{ output.stdout[2] }}"
