@@ -2,19 +2,25 @@
 # tasks file for ios_checks
 
 
-- name: debug item
-  debug: var="{{ item }}"
+
+- name: Router block
+  block:
+
+    - debug: var="{{ item }}"
+
+    - name: collect output from ios device
+      ios_command:
+        host: "{{ item }}"
+        commands:
+          - show version
+          - show interface
+          - show running-config all
+          - show ip interface brief
+      register: output
+
   with_items: my_array
-  
-# - name: collect output from ios device
-#   ios_command:
-#     host: "{{ inventory_hostname }}"
-#     commands:
-#       - show version
-#       - show interface
-#       - show running-config all
-#       - show ip interface brief
-#   register: output
+
+
 #
 # # common facts
 # #
