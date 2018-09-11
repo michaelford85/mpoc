@@ -3,33 +3,29 @@
 
 
 - name: collect output from ios device
-  ios_command:
-    commands:
-      - show version
-      - show interfaces
-      - show running-config
+  ios_facts:
   register: output
 
 - name: set hostname fact
   set_fact:
-    hostname: "{{ output.stdout[2] | regex_search('\nhostname (.+)', '\\1') | first }}"
+    hostname: "{{ output.ansible_net_hostname }}"
 
-- name: set model number
-  set_fact:
-    model_number: "{{ output.stdout[0] | regex_search('[Cc]isco (.+) \\(revision', '\\1') | first | regex_search('(\\d+)') }}"
-
-- name: set interfaces fact
-  set_fact:
-    interfaces: "{{ output.stdout[1] | regex_findall('\n([L|G|A|B|C|D||M|N|P|T|V]\\S+)') }}"
-
-- name: set version fact
-  set_fact:
-    version: "{{ output.stdout[0] | regex_search('Version (\\S+)', '\\1') | first }}"
+# - name: set model number
+#   set_fact:
+#     model_number: "{{ output.stdout[0] | regex_search('[Cc]isco (.+) \\(revision', '\\1') | first | regex_search('(\\d+)') }}"
+#
+# - name: set interfaces fact
+#   set_fact:
+#     interfaces: "{{ output.stdout[1] | regex_findall('\n([L|G|A|B|C|D||M|N|P|T|V]\\S+)') }}"
+#
+# - name: set version fact
+#   set_fact:
+#     version: "{{ output.stdout[0] | regex_search('Version (\\S+)', '\\1') | first }}"
 
 - name: print hostname
   debug:
     msg:
       - "Hostname: {{ hostname }}"
-      - "Model Number: {{ model_number }}"
-      - "Software Version: {{ version }}"
-      - "Interfaces: {{ interfaces }}"
+      # - "Model Number: {{ model_number }}"
+      # - "Software Version: {{ version }}"
+      # - "Interfaces: {{ interfaces }}"
