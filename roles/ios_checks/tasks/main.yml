@@ -2,18 +2,56 @@
 # tasks file for ios_checks
 
 
-- name: collect output from ios device
+# - name: collect output from ios device
+#   ios_command:
+#     commands:
+#       - show version
+#       - show interface
+#       - show running-config all
+#       - show ip interface brief
+#   register: output
+
+- name: Show router status
   ios_command:
     commands:
-      - show version
-      - show interface
-      - show running-config all
       - show ip interface brief
-  register: output
+      - show ip route summary
+      - show ip bgp summary
+  register: all_interfaces
 
-- name: Show Interface
+- name: print router status
   debug:
-    msg: "{{ output.stdout[1] | regex_findall('\n([E|L|P|V]\\S+)') }}"
-    #msg: "{{ output.stdout[2] | regex_findall('\\s+hostname \\s+(\\S+)') | first }}"
-    #msg: "{{ output.stdout[2] | regex_findall('hostname') | first }}"
-    #msg: "{{ output.stdout[2] }}"
+    var: all_interfaces
+
+# - name: Show Interface
+#   debug:
+#     msg: "{{ output.stdout[1] | regex_findall('\n([E|L|P|V]\\S+)') }}"
+#     #msg: "{{ output.stdout[2] | regex_findall('\\s+hostname \\s+(\\S+)') | first }}"
+#     #msg: "{{ output.stdout[2] | regex_findall('hostname') | first }}"
+#     #msg: "{{ output.stdout[2] }}"
+#
+# - name: set hostname fact
+#   set_fact:
+#     hostname: "{{ output.stdout[0] | regex_findall('\\s+Device name:\\s+(\\S+)') | first }}"
+#
+# - name: set interfaces fact
+#   set_fact:
+#     interfaces: "{{ output.stdout[1] | regex_findall('\n([E|L|P|V]\\S+)') }}"
+#
+# - name: set version fact
+#   set_fact:
+#     version: "{{ output.stdout[0] | regex_findall('(system|NXOS):\\s+version\\s+(\\S+)') | first }}"
+#
+# - name: set config fact
+#   set_fact:
+#     config: "{{ output.stdout[2] }}"
+#
+# - name: set config_lines fact
+#   set_fact:
+#     config_lines: "{{ config.split('\n') }}"
+#
+# - name: Print out
+#   debug:
+    # msg:
+    #   - "hostname: {{ec2_name_prefix}}"
+    #   - "version: {{ ec2_vpc_id2 }}"
