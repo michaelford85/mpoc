@@ -11,17 +11,26 @@
 #       - show ip interface brief
 #   register: output
 
-- name: Show router status
-  ios_command:
-    commands:
-      - show ip interface brief
-      - show ip route summary
-      - show ip bgp summary
-  register: all_interfaces
+- name: Retrieve router facts
+  ios_facts:
+  register: facts_output
 
-- name: print router status
+- name: Show router status
   debug:
-    var: all_interfaces
+    msg:
+      - "Hostname: {{ facts_output.ansible_net_hostname }}"
+      - "IOS Version: {{ facts_output.ansible_net_version }}"
+# - name: Show router status
+#   ios_command:
+#     commands:
+#       - show ip interface brief
+#       - show ip route summary
+#       - show ip bgp summary
+#   register: all_interfaces
+#
+# - name: print router status
+#   debug:
+#     var: all_interfaces
 
 # - name: Show Interface
 #   debug:
