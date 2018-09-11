@@ -3,7 +3,7 @@
 
 
 - name: Debug
-  debug: var="{{ inventory_hostname }}"
+  debug: msg="{{ router }}"
 
     # - name: collect output from ios device
     #   ios_command:
