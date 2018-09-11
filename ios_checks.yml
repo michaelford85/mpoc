@@ -15,3 +15,8 @@
         - show interface
         - show running-config all
         - show ip interface brief
+    register: output
+
+  - name: Show output
+    debug:
+      msg: "{{ output.stdout[0] | regex_findall('\\s+Device name:\\s+(\\S+)') | first }}"
