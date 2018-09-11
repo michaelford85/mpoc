@@ -14,9 +14,28 @@
   set_fact:
     hostname: "{{ output.stdout[2] | regex_search('\nhostname (.+)', '\\1') | first }}"
 
+- name: set model number
+  set_fact:
+    model_number: "{{ output.stdout[0] | regex_search('[Cc]isco (.+) \\(revision', '\\1') | first | regex_search('(\\d+)') }}"
+
+- name: set interfaces fact
+  set_fact:
+    interfaces: "{{ output.stdout[1] | regex_findall('\n([L|G|A|B|C|D||M|N|P|T|V]\\S+)') }}"
+
+- name: set version fact
+  set_fact:
+    version: "{{ output.stdout[0] | regex_search('Version (\\S+)', '\\1') | first }}"
+
 - name: print hostname
   debug:
-    msg: "Hostname: {{ hostname }}"
+    msg:
+      - "Hostname: {{ hostname }}"
+      - " Model Number: {{ model_number }}"
+      - " Version: {{ version }}"
+
+- name: print interfaces
+  debug:
+    var: interfaces
 
 # - name: Retrieve router facts
 #   ios_facts:
