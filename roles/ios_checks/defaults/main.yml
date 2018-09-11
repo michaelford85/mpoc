@@ -1,4 +1,2 @@
 ---
 # defaults file for ios_checks
-
-router: "{{ inventory_hostname }}"
