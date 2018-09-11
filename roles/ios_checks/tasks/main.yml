@@ -2,24 +2,35 @@
 # tasks file for ios_checks
 
 
-# - name: collect output from ios device
-#   ios_command:
-#     commands:
-#       - show version
-#       - show interface
-#       - show running-config all
-#       - show ip interface brief
-#   register: output
+- name: collect output from ios device
+  ios_command:
+    commands:
+      - show version
+      - show interfaces
+      - show running-config
+  register: output
 
-- name: Retrieve router facts
-  ios_facts:
-  register: facts_output
+- name: set hostname fact
+  set_fact:
+    hostname: "{{ output.stdout[2] | regex_search('\nhostname (.+)', '\\1') | first }}"
 
-- name: Show router status
+- name: print hostname
   debug:
-    msg:
-      #- "Hostname: {{ facts_output.ansible_net_hostname }}"
-      - "IOS Version: {{ facts_output.ansible_net_version }}"
+    msg: "Hostname: {{ hostname }}"
+
+# - name: Retrieve router facts
+#   ios_facts:
+#   register: facts_output
+#
+# - name: set facts:
+#   set_fact:
+#
+#
+# - name: Show router status
+#   debug:
+#     msg:
+#       #- "Hostname: {{ facts_output.ansible_net_hostname }}"
+#       - "IOS Version: {{ facts_output.ansible_net_version }}"
 # - name: Show router status
 #   ios_command:
 #     commands:
