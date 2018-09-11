@@ -30,10 +30,10 @@
   debug:
     msg:
       - "Hostname: {{ hostname }}"
-      - " Model Number: {{ model_number }}"
-      - " Software Version: {{ version }}"
-    var: interfaces
-# 
+      - "Model Number: {{ model_number }}"
+      - "Software Version: {{ version }}"
+      - "Interfaces: {{ interfaces }}"
+#
 # - name: print interfaces
 #   debug:
 #     var: interfaces
