@@ -4,7 +4,7 @@
   gather_facts: no
 
   roles:
-    - { role: ios_checks, my_array: groups.cisco }
+    - { role: ios_checks, my_array: "{{ groups.cisco }}" }
 
   # tasks:
   #
