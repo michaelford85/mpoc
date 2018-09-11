@@ -2,7 +2,7 @@
 # tasks file for ios_checks
 
 - name: collect output from ios device
-  nxos_command:
+  ios_command:
     host: "{{ inventory_hostname }}"
     commands:
       - show version
