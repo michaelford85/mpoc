@@ -7,15 +7,13 @@
   #   - { role: ios_checks, my_array: "{{ groups.cisco }}" }
 
   tasks:
-    #
-    # - name: debug router names
-    #   debug:
-    #     msg: "{{item}}"
-    #   with_items: "{{ groups['cisco'] }}"
 
-    - name: Perform IOS checks
-      include_role:
-        name: ios_checks
-      # vars:
-      #   router: "{{ item }}"
-      # with_items: "{{ groups['cisco'] }}"
+  - name: collect output from ios device
+    ios_command:
+      host: "{{ item }}"
+      commands:
+        - show version
+        - show interface
+        - show running-config all
+        - show ip interface brief
+    with_items: "{{ groups['cisco'] }}"
