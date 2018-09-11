@@ -11,8 +11,9 @@
       - show ip interface brief
   register: output
 
-- name: Show output
+- name: Show Interface
   debug:
+    msg: "{{ output.stdout[1] | regex_findall('\n([E|L|P|V]\\S+)') }}"
     #msg: "{{ output.stdout[2] | regex_findall('\\s+hostname \\s+(\\S+)') | first }}"
-    msg: "{{ output.stdout[2] | regex_findall('hostname') | first }}"
+    #msg: "{{ output.stdout[2] | regex_findall('hostname') | first }}"
     #msg: "{{ output.stdout[2] }}"
