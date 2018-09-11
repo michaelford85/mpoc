@@ -2,6 +2,13 @@
 - hosts: cisco
   connection: local
   gather_facts: no
+  # 
+  # roles:
+  #   - ios_checks
 
-  roles:
-    - ios_checks
+  tasks:
+
+    - name: Perform IOS checks
+      include_role:
+        name: ios_checks
+      with_items: groups.cisco
