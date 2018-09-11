@@ -31,11 +31,12 @@
     msg:
       - "Hostname: {{ hostname }}"
       - " Model Number: {{ model_number }}"
-      - " Version: {{ version }}"
-
-- name: print interfaces
-  debug:
+      - " Software Version: {{ version }}"
     var: interfaces
+# 
+# - name: print interfaces
+#   debug:
+#     var: interfaces
 
 # - name: Retrieve router facts
 #   ios_facts:
