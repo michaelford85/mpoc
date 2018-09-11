@@ -10,7 +10,7 @@
 
     - name: debug router names
       debug:
-        var: "{{item}}"
+        msg: "{{item}}"
       with_items: "{{ groups['cisco'] }}"
 
     # - name: Perform IOS checks
