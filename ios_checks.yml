@@ -19,4 +19,5 @@
 
   - name: Show output
     debug:
-      msg: "{{ output.stdout[0] | regex_findall('\\s+Device name:\\s+(\\S+)') | first }}"
+      # msg: "{{ output.stdout[0] | regex_findall('\\s+Device name:\\s+(\\S+)') | first }}"
+      msg: "{{ output.stdout[0] }}"
