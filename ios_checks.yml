@@ -10,10 +10,8 @@
 
   - name: collect output from ios device
     ios_command:
-      host: "{{ item }}"
       commands:
         - show version
         - show interface
         - show running-config all
         - show ip interface brief
-    with_items: "{{ groups['cisco'] }}"
