@@ -8,7 +8,6 @@
   - name: Backup current config
     ios_config:
       backup: yes
-      provider: "{{ cli }}"
     register: backup_config
 
   - debug:
