@@ -4,23 +4,7 @@
 
 - name: collect output from ios device
   ios_facts:
-#   register: output
-#
-# - name: set hostname fact
-#   set_fact:
-#     hostname: "{{ output.ansible_net_hostname }}"
 
-# - name: set model number
-#   set_fact:
-#     model_number: "{{ output.stdout[0] | regex_search('[Cc]isco (.+) \\(revision', '\\1') | first | regex_search('(\\d+)') }}"
-#
-# - name: set interfaces fact
-#   set_fact:
-#     interfaces: "{{ output.stdout[1] | regex_findall('\n([L|G|A|B|C|D||M|N|P|T|V]\\S+)') }}"
-#
-# - name: set version fact
-#   set_fact:
-#     version: "{{ output.stdout[0] | regex_search('Version (\\S+)', '\\1') | first }}"
 
 - name: print router status
   debug:
@@ -29,3 +13,9 @@
       - "Model Number: {{ ansible_net_model }}"
       - "Software Version: {{ ansible_net_version }}"
       - "Serial Number: {{ ansible_net_serialnum}}"
+      - "Interface: {{ ansible_net_interfaces }}"
+
+- name: print interfaces
+  debug:
+      msg: "Interface: {{ item }} IP Address: {{ item.ipv4.address}}
+  with_items: "{{ ansible_net_interfaces }}"
