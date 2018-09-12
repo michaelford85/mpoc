@@ -8,7 +8,7 @@
   debug:
       msg:
         - "Interface: {{ item.key }}"
-        - "IP Address: {{ item.value.ipv4['address'] }}"
+        - "IP Address: {{ item.value.ipv4[address] }}"
         - "Admin Status: {{ item.value.operstatus }}"
         - "Line Protocol {{ item.value.lineprotocol }}"
   with_dict: "{{ ansible_net_interfaces }}"
