@@ -1,0 +1,14 @@
+---
+# tasks file for ios_interface_status
+
+- name: collect output from ios device
+  ios_facts:
+
+- name: print interfaces
+  debug:
+      msg:
+        - "Interface: {{ item.key }}"
+        - "IP Address: {{ item.value.ipv4 }}"
+        - "Admin Status: {{ item.value.operstatus }}"
+        - "Line Protocol {{ item.value.lineprotocol }}"
+  with_dict: "{{ ansible_net_interfaces }}"
