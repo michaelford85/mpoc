@@ -18,4 +18,4 @@
 - name: print interfaces
   debug:
       msg: "Interface: {{ item }} IP Address: {{ item.ipv4.address}}"
-  with_items: "{{ ansible_net_interfaces }}"
+  with_dict: "{{ ansible_net_interfaces }}"
