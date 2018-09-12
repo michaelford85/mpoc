@@ -5,7 +5,7 @@
   gather_facts:  False
 
   vars:
-    desired_ios_version: "16.08.01b"
+    desired_ios_version: "16.08.01a"
 
   tasks:
 
