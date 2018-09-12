@@ -5,7 +5,7 @@
 
 
   tasks:
-    
-  - name: Call ios_checks role
+
+  - name: Call ios_status role
     include_role:
-      name: ios_checks
+      name: ios_status
