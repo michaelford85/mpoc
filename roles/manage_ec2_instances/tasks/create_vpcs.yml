@@ -16,30 +16,6 @@
   until: create_vpc is not failed
   retries: 5
 
-- name: Create CSR 1000v EC2 security group for VPC named {{ ec2_name_prefix }}-vpc
-  ec2_group:
-    name: "{{ ec2_name_prefix }}-CSR100v-SSH"
-    description: SSH access
-    region: "{{ ec2_region }}"
-    vpc_id: "{{create_vpc.vpc.id}}"
-#    tags:
-#      Username: "{{ linklight_user }}"
-#      Info: "Username that provisioned this-> {{ linklight_user }}"
-#      Linklight: "This was provisioned through the linklight provisioner"
-#      Students: "{{student_total}}"
-    rules:
-      - proto: tcp
-        to_port: 22
-        from_port: 22
-        cidr_ip: 0.0.0.0/0
-    rules_egress:
-      - proto: all
-        cidr_ip: 0.0.0.0/0
-#  when: ec2_vpc_id is undefined
-  register: create_sg
-  until: create_sg is not failed
-  retries: 5
-
 - name: Create Webserver EC2 security group for VPC named {{ ec2_name_prefix }}-vpc
   ec2_group:
     name: "{{ ec2_name_prefix }}-webserver-access"
@@ -161,11 +137,10 @@
 - name: set variables for instance creation dynamically since VPC was not supplied by user
   set_fact:
     ec2_vpc_id: "{{ create_vpc.vpc.id }}"
-    ec2_security_group: "{{ ec2_name_prefix }}-CSR100v-SSH"
     ec2_webserver_security_group: "{{ ec2_name_prefix }}-webserver-access"
-    # ec2_vpc_subnet_id: "{{ create_subnet.subnet.id }}"
-    ec2_vpc_subnet_id_1: "{{ create_subnet_1.subnet.id }}"
-    ec2_vpc_subnet_id_2: "{{ create_subnet_2.subnet.id }}"
+    ec2_vpc_subnet_id: "{{ create_subnet.subnet.id }}"
+    # ec2_vpc_subnet_id_1: "{{ create_subnet_1.subnet.id }}"
+    # ec2_vpc_subnet_id_2: "{{ create_subnet_2.subnet.id }}"
     # ec2_vpc_subnet_id_3: "{{ create_subnet_3.subnet.id }}"
     # ec2_vpc_subnet_id_4: "{{ create_subnet_4.subnet.id }}"
     # ec2_vpc_subnet_id_5: "{{ create_subnet_5.subnet.id }}"
