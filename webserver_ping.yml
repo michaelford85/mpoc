@@ -1,0 +1,14 @@
+- name: Communicate with Webserver
+  hosts: webserver
+  become: yes
+  gather_facts: no
+
+  tasks:
+
+  - name: ping webserver
+    ping:
+
+  - name: restart Apache
+    service:
+      name: httpd
+      state: restarted
