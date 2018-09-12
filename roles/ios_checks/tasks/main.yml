@@ -13,9 +13,9 @@
       - "Model Number: {{ ansible_net_model }}"
       - "Software Version: {{ ansible_net_version }}"
       - "Serial Number: {{ ansible_net_serialnum}}"
-      - "Interface: {{ ansible_net_interfaces }}"
+      #- "Interface: {{ ansible_net_interfaces }}"
 
 - name: print interfaces
   debug:
-      msg: "Interface: {{ item.key }} IP Address: {{item.key.mtu}}"
+      msg: "Interface: {{ item.key }}"
   with_dict: "{{ ansible_net_interfaces }}"
