@@ -45,61 +45,61 @@
   retries: 5
 
 
-# - name: Create subnet for {{ ec2_name_prefix }}-vpc
+- name: Create subnet for {{ ec2_name_prefix }}-vpc
+  ec2_vpc_subnet:
+    region: "{{ ec2_region }}"
+    az: "{{ ec2_az }}"
+    vpc_id: "{{ create_vpc.vpc.id }}"
+    cidr: "{{ ec2_subnet }}"
+    wait_timeout: 600
+    resource_tags:
+      Name: "{{ ec2_name_prefix }}-subnet"
+#      Username: "{{ linklight_user }}"
+#      Info: "Username that provisioned this-> {{ linklight_user }}"
+#      Linklight: "This was provisioned through the linklight provisioner"
+#      Students: "{{student_total}}"
+  register: create_subnet
+#  when: ec2_vpc_id is undefined
+  until: create_subnet is not failed
+  retries: 15
+
+# - name: Create subnet for {{ ec2_subnet_1_description }}
 #   ec2_vpc_subnet:
 #     region: "{{ ec2_region }}"
 #     az: "{{ ec2_az }}"
 #     vpc_id: "{{ create_vpc.vpc.id }}"
-#     cidr: "{{ ec2_subnet }}"
+#     cidr: "{{ ec2_subnet_1 }}"
 #     wait_timeout: 600
 #     resource_tags:
 #       Name: "{{ ec2_name_prefix }}-subnet"
+#       Description: "{{ ec2_subnet_1_description }}"
 # #      Username: "{{ linklight_user }}"
 # #      Info: "Username that provisioned this-> {{ linklight_user }}"
 # #      Linklight: "This was provisioned through the linklight provisioner"
 # #      Students: "{{student_total}}"
-#   register: create_subnet
+#   register: create_subnet_1
 # #  when: ec2_vpc_id is undefined
-#   until: create_subnet is not failed
+#   until: create_subnet_1 is not failed
 #   retries: 15
-
-- name: Create subnet for {{ ec2_subnet_1_description }}
-  ec2_vpc_subnet:
-    region: "{{ ec2_region }}"
-    az: "{{ ec2_az }}"
-    vpc_id: "{{ create_vpc.vpc.id }}"
-    cidr: "{{ ec2_subnet_1 }}"
-    wait_timeout: 600
-    resource_tags:
-      Name: "{{ ec2_name_prefix }}-subnet"
-      Description: "{{ ec2_subnet_1_description }}"
-#      Username: "{{ linklight_user }}"
-#      Info: "Username that provisioned this-> {{ linklight_user }}"
-#      Linklight: "This was provisioned through the linklight provisioner"
-#      Students: "{{student_total}}"
-  register: create_subnet_1
-#  when: ec2_vpc_id is undefined
-  until: create_subnet_1 is not failed
-  retries: 15
-
-- name: Create subnet for {{ ec2_subnet_2_description }}
-  ec2_vpc_subnet:
-    region: "{{ ec2_region }}"
-    az: "{{ ec2_az }}"
-    vpc_id: "{{ create_vpc.vpc.id }}"
-    cidr: "{{ ec2_subnet_2 }}"
-    wait_timeout: 600
-    resource_tags:
-      Name: "{{ ec2_name_prefix }}-subnet"
-      Description: "{{ ec2_subnet_2_description }}"
-#      Username: "{{ linklight_user }}"
-#      Info: "Username that provisioned this-> {{ linklight_user }}"
-#      Linklight: "This was provisioned through the linklight provisioner"
-#      Students: "{{student_total}}"
-  register: create_subnet_2
-#  when: ec2_vpc_id is undefined
-  until: create_subnet_2 is not failed
-  retries: 15
+#
+# - name: Create subnet for {{ ec2_subnet_2_description }}
+#   ec2_vpc_subnet:
+#     region: "{{ ec2_region }}"
+#     az: "{{ ec2_az }}"
+#     vpc_id: "{{ create_vpc.vpc.id }}"
+#     cidr: "{{ ec2_subnet_2 }}"
+#     wait_timeout: 600
+#     resource_tags:
+#       Name: "{{ ec2_name_prefix }}-subnet"
+#       Description: "{{ ec2_subnet_2_description }}"
+# #      Username: "{{ linklight_user }}"
+# #      Info: "Username that provisioned this-> {{ linklight_user }}"
+# #      Linklight: "This was provisioned through the linklight provisioner"
+# #      Students: "{{student_total}}"
+#   register: create_subnet_2
+# #  when: ec2_vpc_id is undefined
+#   until: create_subnet_2 is not failed
+#   retries: 15
 
 - name: vpc internet gateway is present for {{ create_vpc.vpc.id }}
   ec2_vpc_igw:
