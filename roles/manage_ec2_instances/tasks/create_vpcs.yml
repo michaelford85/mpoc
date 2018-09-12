@@ -120,7 +120,7 @@
     region: "{{ ec2_region }}"
     vpc_id: "{{ create_vpc.vpc.id }}"
     subnets:
-      - "{{ create_subnet_1.subnet.id }}"
+      - "{{ create_subnet.subnet.id }}"
     routes:
       - dest: 0.0.0.0/0
         gateway_id: "{{ igw.gateway_id }}"
