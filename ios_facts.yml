@@ -4,5 +4,5 @@
   gather_facts: no
 
   tasks:
-  - name: test task
+  - name: Gather IOS Facts
     ios_facts:
