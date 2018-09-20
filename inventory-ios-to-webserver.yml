@@ -5,16 +5,9 @@
 
   tasks:
 
-  # - name: copy file to webserver
-  #   copy:
-  #     src: /tmp/inventory_report_ios.html
-  #     dest: /var/www/html/index.html
-  #   notify:
-  #     - restart_apache
-
   - name: copy file to webserver
-    template:
-      src: report-ios.j2
+    copy:
+      src: /tmp/inventory_report_ios.html
       dest: /var/www/html/index.html
     notify:
       - restart_apache
