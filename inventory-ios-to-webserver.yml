@@ -7,7 +7,7 @@
 
   - name: copy file to webserver
     copy:
-      src: ~/inventory_report_ios.html
+      src: /tmp/inventory_report_ios.html
       dest: /var/www/html/index.html
     notify:
       - restart_apache
@@ -25,5 +25,5 @@
   tasks:
   - name: Delete local copy of inventory inventory
     file:
-      name: ~/inventory_report_ios.html
+      name: /tmp/inventory_report_ios.html
       state: absent
