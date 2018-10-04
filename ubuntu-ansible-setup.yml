@@ -1,4 +1,5 @@
 ---
+# Follows the shell script steps from: https://github.com/ipspace/NetOpsWorkshop/blob/master/install/install.sh
 - name: Set Up Vagrant Ubuntu Box
   hosts: ubuntu
   become: yes
