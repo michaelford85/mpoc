@@ -1,0 +1,125 @@
+---
+- name: Set Up Vagrant Ubuntu Box
+  hosts: ubuntu
+  become: yes
+
+  tasks:
+
+  - name: Update apt-get
+    apt:
+      update_cache: yes
+
+  - name: Install python-setuptools
+    apt:
+      name: python-setuptools
+      state: present
+
+
+  - name: Install nice-to-have packages
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+       - git
+       - ack-grep
+       - jq
+       - tree
+       - sshpass
+       - colordiff
+
+
+  - name: Install Python development and build modules
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+       - build-essential
+       - python-dev
+       - libffi-dev
+
+  - name: Install pip
+    easy_install:
+      name: pip
+      state: present
+
+  - name: Upgrade pip
+    pip:
+      name: pip
+      version: 9.0.3
+
+  - name: Install setuptools and urllib3
+    pip:
+      name: "{{ item }}"
+      state: forcereinstall
+    with_items:
+       - setuptools
+       - urllib3[secure]
+
+  - name: Install NAPALM dependencies
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+       - libxslt1-dev
+       - libssl-dev
+       - python-lxml
+
+  - name: Install baseline Python components
+    pip:
+      name: "{{ item }}"
+      state: forcereinstall
+    with_items:
+       - cffi
+       - pyyaml
+       - httplib2
+       - pysnmp
+
+  - name: Install Jinja
+    pip:
+      name: "{{ item }}"
+      state: present
+    with_items:
+       - jinja2
+       - six
+       - bracket-expansion
+       - netaddr
+
+  - name: Install Ansible Python dependencies
+    pip:
+      name: pynacl
+      state: forcereinstall
+
+  - name: Install optional Python components
+    pip:
+      name: "{{ item }}"
+      state: present
+    with_items:
+       - yamllint
+       - textfsm
+       - jmespath
+
+  - name: Install Ansible
+    pip:
+      name: ansible
+      state: latest
+
+  - name: Install NAPALM
+    pip:
+      name: "{{ item }}"
+      state: forcereinstall
+    with_items:
+      - napalm
+      - napalm-ansible
+
+  - name: Confirm Successful installation
+    debug:
+      msg: "Installation complete. Let's test Ansible version"
+
+  - name: Confirm Ansible version
+    shell: |
+      ansible --version
+    register: output
+
+  - name: Print Ansible version
+    debug:
+      msg: "{{ output.stdout }}"
