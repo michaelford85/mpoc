@@ -15,12 +15,14 @@
       path: "/home/mford/git_workspace/ios-config-archives/{{inventory_hostname}}/"
       state: directory
     delegate_to: localhost
+    become: yes
 
   - name: Rename Backup File
     copy:
       src: "{{config_output.backup_path}}"
       dest: "/home/mford/git_workspace/ios-config-archives/{{inventory_hostname}}/{{inventory_hostname}}_{{ansible_date_time.epoch}}_{{ansible_date_time.date}}.config"
     delegate_to: localhost
+    become: yes
 
   - name: Remove Non Config Lines
     lineinfile:
@@ -28,6 +30,7 @@
       line: "Building configuration..."
       state: absent
     delegate_to: localhost
+    become: yes
 
   - name: Remove Non Config Lines - Regexp
     lineinfile:
@@ -35,12 +38,14 @@
       regexp: 'Current configuration.*'
       state: absent
     delegate_to: localhost
+    become: yes
 
   - name: Remove Local Backup Directory
     file:
       path: ./backup/
       state: absent
     delegate_to: localhost
+    become: yes
 
   - name: Push Configuration Backup to GitHub Repository
     shell: "{{ item }}"
@@ -51,6 +56,7 @@
       - "git commit -m 'Config Backup {{inventory_hostname}}_{{ansible_date_time.epoch}}_{{ansible_date_time.date}}.config'"
       - "git push"
     delegate_to: localhost
+    become: yes
 
   - name: Compare running config to master Config
     shell: "diff {{inventory_hostname}}_{{ansible_date_time.epoch}}_{{ansible_date_time.date}}.config {{inventory_hostname}}_master.config"
@@ -58,6 +64,7 @@
       chdir: "../ios-config-archives/{{inventory_hostname}}/"
     register: result
     delegate_to: localhost
+    become: yes
     failed_when: result.rc > 1
     changed_when: result.rc == 1
 
