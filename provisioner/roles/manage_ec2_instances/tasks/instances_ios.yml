@@ -1,0 +1,241 @@
+- name: set node types (IOSWORKSHOP MODE)
+  set_fact:
+    rtr1_node: "{{ ec2_lab_node_types_networking['rtr1'] }}"
+    rtr2_node: "{{ ec2_lab_node_types_networking['rtr2'] }}"
+    rtr3_node: "{{ ec2_lab_node_types_networking['rtr3'] }}"
+    rtr4_node: "{{ ec2_lab_node_types_networking['rtr4'] }}"
+    host1_node: "{{ ec2_lab_node_types_networking['host1'] }}"
+
+
+##############Router 1##############
+
+- name: find ami for rtr1 (IOSWORKSHOP MODE)
+  ec2_ami_facts:
+    region: "{{ ec2_region }}"
+    owners: "{{ ec2_instance_types[rtr1_node].owners }}"
+    filters:
+      name: "{{ ec2_instance_types[rtr1_node].filter }}"
+      architecture: "{{ ec2_instance_types[rtr1_node].architecture }}"
+  register: amis
+
+- name: save ami for rtr1 (IOSWORKSHOP MODE)
+  set_fact:
+    rtr1_ami: >
+      {{ amis.images | selectattr('name', 'defined') | sort(attribute='creation_date') | last }}
+
+- name: Create EC2 instances for rtr1 node (IOSWORKSHOP MODE)
+  ec2:
+    assign_public_ip: yes
+    key_name: "{{ ec2_name_prefix }}-key"
+    group: "{{ ec2_security_group }}"
+    instance_type: "{{ ec2_instance_types[rtr1_node].size }}"
+    image: "{{ rtr1_ami.image_id }}"
+    region: "{{ ec2_region }}"
+    count: 1
+    wait: "{{ ec2_wait }}"
+    vpc_subnet_id: "{{ ec2_vpc_subnet_id }}"
+  register: rtr1_output
+
+- name: Ensure tags are present for rtr1 node (IOSWORKSHOP MODE)
+  ec2_tag:
+    region: "{{ ec2_region }}"
+    resource: "{{item.1}}"
+    state: present
+    tags:
+      Workshop: "{{ec2_name_prefix}}"
+      Name: "{{ ec2_name_prefix }}-rtr1"
+      Short-Name: rtr1
+  with_indexed_items:
+    - "{{ rtr1_output.instance_ids }}"
+  when: rtr1_output.instance_ids is not none
+
+
+##############Router 2##############
+
+- name: find ami for rtr2 (IOSWORKSHOP MODE)
+  ec2_ami_facts:
+    region: "{{ ec2_region }}"
+    owners: "{{ ec2_instance_types[rtr2_node].owners }}"
+    filters:
+      name: "{{ ec2_instance_types[rtr2_node].filter }}"
+      architecture: "{{ ec2_instance_types[rtr2_node].architecture }}"
+  register: amis
+  when: iosworkshop
+
+- name: save ami for rtr2 (IOSWORKSHOP MODE)
+  set_fact:
+    rtr2_ami: >
+      {{ amis.images | selectattr('name', 'defined') | sort(attribute='creation_date') | last }}
+
+- name: Create EC2 instances for rtr2 node in VPC-2 (IOSWORKSHOP MODE)
+  ec2:
+    assign_public_ip: yes
+    key_name: "{{ ec2_name_prefix }}-key"
+    group: "{{ ec2_security_group2 }}"
+    instance_type: "{{ ec2_instance_types[rtr2_node].size }}"
+    image: "{{ rtr2_ami.image_id }}"
+    region: "{{ ec2_region }}"
+    count: 1
+    wait: "{{ ec2_wait }}"
+    vpc_subnet_id: "{{ ec2_vpc_subnet_id2 }}"
+  register: rtr2_output
+
+- name: Ensure tags are present for rtr2 node (IOSWORKSHOP MODE)
+  ec2_tag:
+    region: "{{ ec2_region }}"
+    resource: "{{item.1}}"
+    state: present
+    tags:
+      Workshop: "{{ec2_name_prefix}}"
+      Name: "{{ ec2_name_prefix }}-rtr2"
+      Short-Name: rtr2
+  with_indexed_items:
+    - "{{ rtr2_output.instance_ids }}"
+  when: rtr2_output.instance_ids is not none
+
+##############Router 3##############
+- name: find ami for rtr3 (IOSWORKSHOP MODE)
+  ec2_ami_facts:
+    region: "{{ ec2_region }}"
+    owners: "{{ ec2_instance_types[rtr3_node].owners }}"
+    filters:
+      name: "{{ ec2_instance_types[rtr3_node].filter }}"
+      architecture: "{{ ec2_instance_types[rtr3_node].architecture }}"
+  register: amis
+
+- name: save ami for rtr3 (IOSWORKSHOP MODE)
+  set_fact:
+    rtr3_ami: >
+      {{ amis.images | selectattr('name', 'defined') | sort(attribute='creation_date') | last }}
+
+- name: Create EC2 instances for rtr3 node (IOSWORKSHOP MODE)
+  ec2:
+    assign_public_ip: yes
+    key_name: "{{ ec2_name_prefix }}-key"
+    group: "{{ ec2_security_group }}"
+    instance_type: "{{ ec2_instance_types[rtr3_node].size }}"
+    image: "{{ rtr3_ami.image_id }}"
+    region: "{{ ec2_region }}"
+    count: 1
+    wait: "{{ ec2_wait }}"
+    vpc_subnet_id: "{{ ec2_vpc_subnet_id }}"
+  register: rtr3_output
+
+- name: Ensure tags are present for rtr3 node (IOSWORKSHOP MODE)
+  ec2_tag:
+    region: "{{ ec2_region }}"
+    resource: "{{item.1}}"
+    state: present
+    tags:
+      Workshop: "{{ec2_name_prefix}}"
+      Name: "{{ ec2_name_prefix }}-rtr3"
+      Short-Name: rtr3
+  with_indexed_items:
+    - "{{ rtr3_output.instance_ids }}"
+  when: rtr3_output.instance_ids is not none
+
+##############Router 4##############
+
+- name: find ami for rtr4 (IOSWORKSHOP MODE)
+  ec2_ami_facts:
+    region: "{{ ec2_region }}"
+    owners: "{{ ec2_instance_types[rtr4_node].owners }}"
+    filters:
+      name: "{{ ec2_instance_types[rtr4_node].filter }}"
+      architecture: "{{ ec2_instance_types[rtr4_node].architecture }}"
+  register: amis
+  when: iosworkshop
+
+- name: save ami for rtr4 (IOSWORKSHOP MODE)
+  set_fact:
+    rtr4_ami: >
+      {{ amis.images | selectattr('name', 'defined') | sort(attribute='creation_date') | last }}
+
+- name: Create EC2 instances for rtr4 node in VPC-2 (IOSWORKSHOP MODE)
+  ec2:
+    assign_public_ip: yes
+    key_name: "{{ ec2_name_prefix }}-key"
+    group: "{{ ec2_security_group2 }}"
+    instance_type: "{{ ec2_instance_types[rtr4_node].size }}"
+    image: "{{ rtr4_ami.image_id }}"
+    region: "{{ ec2_region }}"
+    count: 1
+    wait: "{{ ec2_wait }}"
+    vpc_subnet_id: "{{ ec2_vpc_subnet_id2 }}"
+  register: rtr4_output
+
+- name: Ensure tags are present for rtr4 node (IOSWORKSHOP MODE)
+  ec2_tag:
+    region: "{{ ec2_region }}"
+    resource: "{{item.1}}"
+    state: present
+    tags:
+      Workshop: "{{ec2_name_prefix}}"
+      Name: "{{ ec2_name_prefix }}-rtr4"
+      Short-Name: rtr4
+  with_indexed_items:
+    - "{{ rtr4_output.instance_ids }}"
+  when: rtr4_output.instance_ids is not none
+
+- name: find ami for host1 (IOSWORKSHOP MODE)
+  ec2_ami_facts:
+    region: "{{ ec2_region }}"
+    owners: "{{ ec2_instance_types[host1_node].owners }}"
+    filters:
+      name: "{{ ec2_instance_types[host1_node].filter }}"
+      architecture: "{{ ec2_instance_types[host1_node].architecture }}"
+  register: amis
+
+- name: save ami for host1 (IOSWORKSHOP MODE)
+  set_fact:
+    host1_ami: >
+      {{ amis.images | selectattr('name', 'defined') | sort(attribute='creation_date') | last }}
+
+- name: Create EC2 instances for host1 node in VPC-2 (IOSWORKSHOP MODE)
+  ec2:
+    assign_public_ip: yes
+    key_name: "{{ ec2_name_prefix }}-key"
+    group: "{{ ec2_security_group2 }}"
+    instance_type: "{{ ec2_instance_types[host1_node].size }}"
+    image: "{{ host1_ami.image_id }}"
+    region: "{{ ec2_region }}"
+    count: 1
+    wait: "{{ ec2_wait }}"
+    vpc_subnet_id: "{{ ec2_vpc_subnet_id2 }}"
+  register: host1_output
+
+- name: Ensure tags are present for host1 node (IOSWORKSHOP MODE)
+  ec2_tag:
+    region: "{{ ec2_region }}"
+    resource: "{{item.1}}"
+    state: present
+    tags:
+      Workshop: "{{ec2_name_prefix}}"
+      Name: "{{ ec2_name_prefix }}-webserver"
+      Short-Name: webserver
+  with_indexed_items:
+    - "{{ host1_output.instance_ids }}"
+  when: host1_output.instance_ids is not none
+
+- name: grab all network interfaces for VPC 1 (IOSWORKSHOP MODE)
+  ec2_eni_facts:
+    region: "{{ ec2_region }}"
+    filters:
+      vpc-id: "{{ec2_vpc_id}}"
+  register: eni_facts_1
+
+- name: grab all network interfaces for VPC 2 (IOSWORKSHOP MODE)
+  ec2_eni_facts:
+    region: "{{ ec2_region }}"
+    filters:
+      vpc-id: "{{ec2_vpc_id2}}"
+  register: eni_facts_2
+
+- name: Disable Source/Dest check on instance {{ec2_vpc_id1}} (IOSWORKSHOP MODE)
+  ec2_eni:
+    eni_id: "{{ item['network_interface_id'] }}"
+    region: "{{ ec2_region }}"
+    source_dest_check: false
+  with_items:
+    - "{{eni_facts_1['network_interfaces']}}"
+    - "{{eni_facts_2['network_interfaces']}}"

@@ -1,0 +1,556 @@
+2018-10-10 10:44:42,833 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-10 10:44:42,839 p=29566 u=mford |  PLAY [cisco] ******************************************************************************************************************************************
+2018-10-10 10:44:42,854 p=29566 u=mford |  TASK [show version] ***********************************************************************************************************************************
+2018-10-10 10:44:44,251 p=29578 u=mford |  network_os is set to ios
+2018-10-10 10:44:44,258 p=29579 u=mford |  network_os is set to ios
+2018-10-10 10:44:44,259 p=29577 u=mford |  network_os is set to ios
+2018-10-10 10:44:44,261 p=29580 u=mford |  network_os is set to ios
+2018-10-10 10:44:45,046 p=29599 u=mford | paramiko [34.227.57.70] starting thread (client mode): 0x497de90L
+2018-10-10 10:44:45,047 p=29599 u=mford | paramiko [34.227.57.70] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:44:45,048 p=29605 u=mford | paramiko [54.89.192.126] starting thread (client mode): 0x9a1ee90L
+2018-10-10 10:44:45,049 p=29605 u=mford | paramiko [54.89.192.126] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:44:45,049 p=29608 u=mford | paramiko [54.242.127.146] starting thread (client mode): 0xa72fe90L
+2018-10-10 10:44:45,050 p=29608 u=mford | paramiko [54.242.127.146] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:44:45,050 p=29606 u=mford | paramiko [18.205.20.223] starting thread (client mode): 0xca3fe90L
+2018-10-10 10:44:45,051 p=29606 u=mford | paramiko [18.205.20.223] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:44:45,082 p=29599 u=mford | paramiko [34.227.57.70] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:44:45,083 p=29599 u=mford | paramiko [34.227.57.70] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:44:45,085 p=29599 u=mford | paramiko [34.227.57.70] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:44:45,085 p=29608 u=mford | paramiko [54.242.127.146] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:44:45,086 p=29599 u=mford | paramiko [34.227.57.70] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:44:45,086 p=29608 u=mford | paramiko [54.242.127.146] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:44:45,086 p=29605 u=mford | paramiko [54.89.192.126] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:44:45,086 p=29599 u=mford | paramiko [34.227.57.70] HostKey agreed: ssh-rsa
+2018-10-10 10:44:45,087 p=29605 u=mford | paramiko [54.89.192.126] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:44:45,087 p=29599 u=mford | paramiko [34.227.57.70] Cipher agreed: aes128-ctr
+2018-10-10 10:44:45,087 p=29599 u=mford | paramiko [34.227.57.70] MAC agreed: hmac-sha2-256
+2018-10-10 10:44:45,088 p=29599 u=mford | paramiko [34.227.57.70] Compression agreed: none
+2018-10-10 10:44:45,089 p=29605 u=mford | paramiko [54.89.192.126] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:44:45,089 p=29608 u=mford | paramiko [54.242.127.146] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:44:45,090 p=29605 u=mford | paramiko [54.89.192.126] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:44:45,090 p=29608 u=mford | paramiko [54.242.127.146] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:44:45,091 p=29605 u=mford | paramiko [54.89.192.126] HostKey agreed: ssh-rsa
+2018-10-10 10:44:45,091 p=29608 u=mford | paramiko [54.242.127.146] HostKey agreed: ssh-rsa
+2018-10-10 10:44:45,091 p=29606 u=mford | paramiko [18.205.20.223] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:44:45,091 p=29608 u=mford | paramiko [54.242.127.146] Cipher agreed: aes128-ctr
+2018-10-10 10:44:45,091 p=29605 u=mford | paramiko [54.89.192.126] Cipher agreed: aes128-ctr
+2018-10-10 10:44:45,091 p=29606 u=mford | paramiko [18.205.20.223] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:44:45,091 p=29605 u=mford | paramiko [54.89.192.126] MAC agreed: hmac-sha2-256
+2018-10-10 10:44:45,091 p=29608 u=mford | paramiko [54.242.127.146] MAC agreed: hmac-sha2-256
+2018-10-10 10:44:45,092 p=29605 u=mford | paramiko [54.89.192.126] Compression agreed: none
+2018-10-10 10:44:45,092 p=29608 u=mford | paramiko [54.242.127.146] Compression agreed: none
+2018-10-10 10:44:45,142 p=29606 u=mford | paramiko [18.205.20.223] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:44:45,142 p=29606 u=mford | paramiko [18.205.20.223] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:44:45,143 p=29606 u=mford | paramiko [18.205.20.223] HostKey agreed: ssh-rsa
+2018-10-10 10:44:45,143 p=29606 u=mford | paramiko [18.205.20.223] Cipher agreed: aes128-ctr
+2018-10-10 10:44:45,144 p=29606 u=mford | paramiko [18.205.20.223] MAC agreed: hmac-sha2-256
+2018-10-10 10:44:45,144 p=29606 u=mford | paramiko [18.205.20.223] Compression agreed: none
+2018-10-10 10:44:45,369 p=29599 u=mford | paramiko [34.227.57.70] Got server p (2048 bits)
+2018-10-10 10:44:45,373 p=29608 u=mford | paramiko [54.242.127.146] Got server p (2048 bits)
+2018-10-10 10:44:45,377 p=29605 u=mford | paramiko [54.89.192.126] Got server p (2048 bits)
+2018-10-10 10:44:45,381 p=29606 u=mford | paramiko [18.205.20.223] Got server p (2048 bits)
+2018-10-10 10:44:45,493 p=29599 u=mford | paramiko [34.227.57.70] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:44:45,494 p=29599 u=mford | paramiko [34.227.57.70] Switch to new keys ...
+2018-10-10 10:44:45,497 p=29608 u=mford | paramiko [54.242.127.146] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:44:45,498 p=29608 u=mford | paramiko [54.242.127.146] Switch to new keys ...
+2018-10-10 10:44:45,502 p=29605 u=mford | paramiko [54.89.192.126] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:44:45,503 p=29605 u=mford | paramiko [54.89.192.126] Switch to new keys ...
+2018-10-10 10:44:45,509 p=29599 u=mford | paramiko [34.227.57.70] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:44:45,511 p=29606 u=mford | paramiko [18.205.20.223] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:44:45,512 p=29608 u=mford | paramiko [54.242.127.146] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:44:45,513 p=29606 u=mford | paramiko [18.205.20.223] Switch to new keys ...
+2018-10-10 10:44:45,534 p=29605 u=mford | paramiko [54.89.192.126] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:44:45,543 p=29606 u=mford | paramiko [18.205.20.223] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:44:45,846 p=29599 u=mford | paramiko [34.227.57.70] userauth is OK
+2018-10-10 10:44:45,846 p=29605 u=mford | paramiko [54.89.192.126] userauth is OK
+2018-10-10 10:44:45,852 p=29608 u=mford | paramiko [54.242.127.146] userauth is OK
+2018-10-10 10:44:45,852 p=29606 u=mford | paramiko [18.205.20.223] userauth is OK
+2018-10-10 10:44:45,895 p=29599 u=mford | paramiko [34.227.57.70] Authentication (publickey) successful!
+2018-10-10 10:44:45,899 p=29605 u=mford | paramiko [54.89.192.126] Authentication (publickey) successful!
+2018-10-10 10:44:45,903 p=29605 u=mford | paramiko [54.89.192.126] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:44:45,907 p=29606 u=mford | paramiko [18.205.20.223] Authentication (publickey) successful!
+2018-10-10 10:44:45,907 p=29608 u=mford | paramiko [54.242.127.146] Authentication (publickey) successful!
+2018-10-10 10:44:45,911 p=29606 u=mford | paramiko [18.205.20.223] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:44:45,912 p=29599 u=mford | paramiko [34.227.57.70] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:44:45,916 p=29608 u=mford | paramiko [54.242.127.146] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:44:45,942 p=29605 u=mford | paramiko [54.89.192.126] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:44:45,943 p=29605 u=mford | paramiko [54.89.192.126] Secsh channel 0 opened.
+2018-10-10 10:44:45,950 p=29606 u=mford | paramiko [18.205.20.223] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:44:45,951 p=29606 u=mford | paramiko [18.205.20.223] Secsh channel 0 opened.
+2018-10-10 10:44:45,954 p=29599 u=mford | paramiko [34.227.57.70] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:44:45,954 p=29608 u=mford | paramiko [54.242.127.146] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:44:45,956 p=29608 u=mford | paramiko [54.242.127.146] Secsh channel 0 opened.
+2018-10-10 10:44:45,956 p=29599 u=mford | paramiko [34.227.57.70] Secsh channel 0 opened.
+2018-10-10 10:44:46,010 p=29605 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,018 p=29599 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,018 p=29606 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,021 p=29608 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,048 p=29605 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,056 p=29599 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,056 p=29606 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:46,058 p=29608 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:44:48,044 p=29566 u=mford |  ok: [rtr2]
+2018-10-10 10:44:48,047 p=29566 u=mford |  ok: [rtr1]
+2018-10-10 10:44:48,048 p=29566 u=mford |  ok: [rtr3]
+2018-10-10 10:44:48,049 p=29566 u=mford |  ok: [rtr4]
+2018-10-10 10:44:48,061 p=29566 u=mford |  TASK [set_fact] ***************************************************************************************************************************************
+2018-10-10 10:44:49,885 p=29566 u=mford |  ok: [rtr1]
+2018-10-10 10:44:49,892 p=29566 u=mford |  ok: [rtr2]
+2018-10-10 10:44:49,892 p=29566 u=mford |  ok: [rtr3]
+2018-10-10 10:44:49,895 p=29566 u=mford |  ok: [rtr4]
+2018-10-10 10:44:49,906 p=29566 u=mford |  TASK [debug] ******************************************************************************************************************************************
+2018-10-10 10:44:51,669 p=29566 u=mford |  ok: [rtr2] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 10:44:51,670 p=29566 u=mford |  ok: [rtr4] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 10:44:51,836 p=29566 u=mford |  ok: [rtr1] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 10:44:51,837 p=29566 u=mford |  ok: [rtr3] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 10:44:51,842 p=29606 u=mford | paramiko [18.205.20.223] [chan 0] EOF sent (0)
+2018-10-10 10:44:51,911 p=29606 u=mford | paramiko [18.205.20.223] EOF in transport thread
+2018-10-10 10:44:51,963 p=29599 u=mford | paramiko [34.227.57.70] [chan 0] EOF sent (0)
+2018-10-10 10:44:52,005 p=29599 u=mford | paramiko [34.227.57.70] EOF in transport thread
+2018-10-10 10:44:52,032 p=29605 u=mford | paramiko [54.89.192.126] [chan 0] EOF sent (0)
+2018-10-10 10:44:52,064 p=29577 u=mford |  shutdown complete
+2018-10-10 10:44:52,116 p=29605 u=mford | paramiko [54.89.192.126] EOF in transport thread
+2018-10-10 10:44:52,133 p=29578 u=mford |  shutdown complete
+2018-10-10 10:44:52,152 p=29608 u=mford | paramiko [54.242.127.146] [chan 0] EOF sent (0)
+2018-10-10 10:44:52,211 p=29608 u=mford | paramiko [54.242.127.146] EOF in transport thread
+2018-10-10 10:44:52,219 p=29566 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-10 10:44:52,220 p=29566 u=mford |  rtr1                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 10:44:52,220 p=29566 u=mford |  rtr2                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 10:44:52,220 p=29566 u=mford |  rtr3                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 10:44:52,221 p=29566 u=mford |  rtr4                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 10:44:52,252 p=29579 u=mford |  shutdown complete
+2018-10-10 10:44:52,319 p=29580 u=mford |  shutdown complete
+2018-10-10 10:45:04,872 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-10 10:45:04,878 p=29723 u=mford |  PLAY [build IOS XE inventory] *************************************************************************************************************************
+2018-10-10 10:45:04,891 p=29723 u=mford |  TASK [gathering IOS XE facts] *************************************************************************************************************************
+2018-10-10 10:45:06,198 p=29735 u=mford |  network_os is set to ios
+2018-10-10 10:45:06,199 p=29733 u=mford |  network_os is set to ios
+2018-10-10 10:45:06,199 p=29736 u=mford |  network_os is set to ios
+2018-10-10 10:45:06,201 p=29734 u=mford |  network_os is set to ios
+2018-10-10 10:45:06,335 p=29759 u=mford | paramiko [54.242.127.146] starting thread (client mode): 0x1bebe90L
+2018-10-10 10:45:06,335 p=29759 u=mford | paramiko [54.242.127.146] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:45:06,337 p=29761 u=mford | paramiko [54.89.192.126] starting thread (client mode): 0x27dfe90L
+2018-10-10 10:45:06,338 p=29761 u=mford | paramiko [54.89.192.126] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:45:06,372 p=29759 u=mford | paramiko [54.242.127.146] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:45:06,372 p=29759 u=mford | paramiko [54.242.127.146] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:45:06,373 p=29759 u=mford | paramiko [54.242.127.146] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:45:06,373 p=29759 u=mford | paramiko [54.242.127.146] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:45:06,374 p=29759 u=mford | paramiko [54.242.127.146] HostKey agreed: ssh-rsa
+2018-10-10 10:45:06,374 p=29759 u=mford | paramiko [54.242.127.146] Cipher agreed: aes128-ctr
+2018-10-10 10:45:06,374 p=29759 u=mford | paramiko [54.242.127.146] MAC agreed: hmac-sha2-256
+2018-10-10 10:45:06,375 p=29759 u=mford | paramiko [54.242.127.146] Compression agreed: none
+2018-10-10 10:45:06,375 p=29761 u=mford | paramiko [54.89.192.126] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:45:06,375 p=29761 u=mford | paramiko [54.89.192.126] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:45:06,376 p=29761 u=mford | paramiko [54.89.192.126] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:45:06,376 p=29761 u=mford | paramiko [54.89.192.126] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:45:06,377 p=29761 u=mford | paramiko [54.89.192.126] HostKey agreed: ssh-rsa
+2018-10-10 10:45:06,377 p=29761 u=mford | paramiko [54.89.192.126] Cipher agreed: aes128-ctr
+2018-10-10 10:45:06,377 p=29761 u=mford | paramiko [54.89.192.126] MAC agreed: hmac-sha2-256
+2018-10-10 10:45:06,378 p=29761 u=mford | paramiko [54.89.192.126] Compression agreed: none
+2018-10-10 10:45:06,662 p=29761 u=mford | paramiko [54.89.192.126] Got server p (2048 bits)
+2018-10-10 10:45:06,662 p=29759 u=mford | paramiko [54.242.127.146] Got server p (2048 bits)
+2018-10-10 10:45:06,793 p=29761 u=mford | paramiko [54.89.192.126] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:45:06,794 p=29761 u=mford | paramiko [54.89.192.126] Switch to new keys ...
+2018-10-10 10:45:06,796 p=29759 u=mford | paramiko [54.242.127.146] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:45:06,797 p=29759 u=mford | paramiko [54.242.127.146] Switch to new keys ...
+2018-10-10 10:45:06,808 p=29761 u=mford | paramiko [54.89.192.126] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:45:06,828 p=29759 u=mford | paramiko [54.242.127.146] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:45:07,005 p=29764 u=mford | paramiko [18.205.20.223] starting thread (client mode): 0xda34e90L
+2018-10-10 10:45:07,005 p=29763 u=mford | paramiko [34.227.57.70] starting thread (client mode): 0xdfaee90L
+2018-10-10 10:45:07,005 p=29763 u=mford | paramiko [34.227.57.70] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:45:07,005 p=29764 u=mford | paramiko [18.205.20.223] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 10:45:07,042 p=29763 u=mford | paramiko [34.227.57.70] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:45:07,042 p=29764 u=mford | paramiko [18.205.20.223] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 10:45:07,043 p=29764 u=mford | paramiko [18.205.20.223] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:45:07,043 p=29763 u=mford | paramiko [34.227.57.70] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 10:45:07,046 p=29763 u=mford | paramiko [34.227.57.70] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:45:07,046 p=29764 u=mford | paramiko [18.205.20.223] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 10:45:07,046 p=29764 u=mford | paramiko [18.205.20.223] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:45:07,046 p=29763 u=mford | paramiko [34.227.57.70] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 10:45:07,047 p=29764 u=mford | paramiko [18.205.20.223] HostKey agreed: ssh-rsa
+2018-10-10 10:45:07,047 p=29763 u=mford | paramiko [34.227.57.70] HostKey agreed: ssh-rsa
+2018-10-10 10:45:07,047 p=29763 u=mford | paramiko [34.227.57.70] Cipher agreed: aes128-ctr
+2018-10-10 10:45:07,047 p=29764 u=mford | paramiko [18.205.20.223] Cipher agreed: aes128-ctr
+2018-10-10 10:45:07,048 p=29763 u=mford | paramiko [34.227.57.70] MAC agreed: hmac-sha2-256
+2018-10-10 10:45:07,048 p=29764 u=mford | paramiko [18.205.20.223] MAC agreed: hmac-sha2-256
+2018-10-10 10:45:07,048 p=29763 u=mford | paramiko [34.227.57.70] Compression agreed: none
+2018-10-10 10:45:07,048 p=29764 u=mford | paramiko [18.205.20.223] Compression agreed: none
+2018-10-10 10:45:07,070 p=29761 u=mford | paramiko [54.89.192.126] userauth is OK
+2018-10-10 10:45:07,076 p=29759 u=mford | paramiko [54.242.127.146] userauth is OK
+2018-10-10 10:45:07,119 p=29761 u=mford | paramiko [54.89.192.126] Authentication (publickey) successful!
+2018-10-10 10:45:07,124 p=29759 u=mford | paramiko [54.242.127.146] Authentication (publickey) successful!
+2018-10-10 10:45:07,126 p=29761 u=mford | paramiko [54.89.192.126] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:45:07,131 p=29759 u=mford | paramiko [54.242.127.146] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:45:07,165 p=29761 u=mford | paramiko [54.89.192.126] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:45:07,166 p=29761 u=mford | paramiko [54.89.192.126] Secsh channel 0 opened.
+2018-10-10 10:45:07,169 p=29759 u=mford | paramiko [54.242.127.146] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:45:07,170 p=29759 u=mford | paramiko [54.242.127.146] Secsh channel 0 opened.
+2018-10-10 10:45:07,230 p=29761 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,235 p=29759 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,270 p=29761 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,274 p=29759 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,326 p=29763 u=mford | paramiko [34.227.57.70] Got server p (2048 bits)
+2018-10-10 10:45:07,334 p=29764 u=mford | paramiko [18.205.20.223] Got server p (2048 bits)
+2018-10-10 10:45:07,451 p=29763 u=mford | paramiko [34.227.57.70] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:45:07,452 p=29763 u=mford | paramiko [34.227.57.70] Switch to new keys ...
+2018-10-10 10:45:07,455 p=29764 u=mford | paramiko [18.205.20.223] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 10:45:07,456 p=29764 u=mford | paramiko [18.205.20.223] Switch to new keys ...
+2018-10-10 10:45:07,467 p=29763 u=mford | paramiko [34.227.57.70] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:45:07,487 p=29764 u=mford | paramiko [18.205.20.223] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 10:45:07,729 p=29763 u=mford | paramiko [34.227.57.70] userauth is OK
+2018-10-10 10:45:07,730 p=29764 u=mford | paramiko [18.205.20.223] userauth is OK
+2018-10-10 10:45:07,780 p=29763 u=mford | paramiko [34.227.57.70] Authentication (publickey) successful!
+2018-10-10 10:45:07,784 p=29764 u=mford | paramiko [18.205.20.223] Authentication (publickey) successful!
+2018-10-10 10:45:07,787 p=29763 u=mford | paramiko [34.227.57.70] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:45:07,792 p=29764 u=mford | paramiko [18.205.20.223] [chan 0] Max packet in: 32768 bytes
+2018-10-10 10:45:07,826 p=29763 u=mford | paramiko [34.227.57.70] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:45:07,827 p=29763 u=mford | paramiko [34.227.57.70] Secsh channel 0 opened.
+2018-10-10 10:45:07,832 p=29764 u=mford | paramiko [18.205.20.223] [chan 0] Max packet out: 4096 bytes
+2018-10-10 10:45:07,833 p=29764 u=mford | paramiko [18.205.20.223] Secsh channel 0 opened.
+2018-10-10 10:45:07,894 p=29763 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,895 p=29764 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,934 p=29763 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:07,934 p=29764 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 10:45:09,639 p=29723 u=mford |  ok: [rtr3]
+2018-10-10 10:45:09,661 p=29723 u=mford |  ok: [rtr4]
+2018-10-10 10:45:10,179 p=29723 u=mford |  ok: [rtr1]
+2018-10-10 10:45:10,226 p=29723 u=mford |  ok: [rtr2]
+2018-10-10 10:45:10,244 p=29723 u=mford |  TASK [create HTML report] *****************************************************************************************************************************
+2018-10-10 10:45:10,964 p=29723 u=mford |  changed: [rtr1 -> localhost]
+2018-10-10 10:45:10,967 p=29764 u=mford | paramiko [18.205.20.223] [chan 0] EOF sent (0)
+2018-10-10 10:45:11,045 p=29764 u=mford | paramiko [18.205.20.223] EOF in transport thread
+2018-10-10 10:45:11,082 p=29763 u=mford | paramiko [34.227.57.70] [chan 0] EOF sent (0)
+2018-10-10 10:45:11,103 p=29763 u=mford | paramiko [34.227.57.70] EOF in transport thread
+2018-10-10 10:45:11,116 p=29761 u=mford | paramiko [54.89.192.126] [chan 0] EOF sent (0)
+2018-10-10 10:45:11,118 p=29761 u=mford | paramiko [54.89.192.126] EOF in transport thread
+2018-10-10 10:45:11,121 p=29759 u=mford | paramiko [54.242.127.146] [chan 0] EOF sent (0)
+2018-10-10 10:45:11,146 p=29759 u=mford | paramiko [54.242.127.146] EOF in transport thread
+2018-10-10 10:45:11,163 p=29723 u=mford |  PLAY [Copy inventory document to webserver] ***********************************************************************************************************
+2018-10-10 10:45:11,169 p=29723 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-10 10:45:11,183 p=29733 u=mford |  shutdown complete
+2018-10-10 10:45:11,216 p=29734 u=mford |  shutdown complete
+2018-10-10 10:45:11,222 p=29735 u=mford |  shutdown complete
+2018-10-10 10:45:11,258 p=29736 u=mford |  shutdown complete
+2018-10-10 10:45:14,218 p=29723 u=mford |  ok: [34.229.144.96]
+2018-10-10 10:45:14,233 p=29723 u=mford |  TASK [copy file to webserver] *************************************************************************************************************************
+2018-10-10 10:45:16,540 p=29723 u=mford |  ok: [34.229.144.96]
+2018-10-10 10:45:16,549 p=29723 u=mford |  PLAY [Delete local copy of inventory] *****************************************************************************************************************
+2018-10-10 10:45:16,554 p=29723 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-10 10:45:17,291 p=29723 u=mford |  ok: [localhost]
+2018-10-10 10:45:17,308 p=29723 u=mford |  TASK [Delete local copy of inventory inventory] *******************************************************************************************************
+2018-10-10 10:45:17,598 p=29723 u=mford |  changed: [localhost]
+2018-10-10 10:45:17,600 p=29723 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-10 10:45:17,600 p=29723 u=mford |  34.229.144.96              : ok=2    changed=0    unreachable=0    failed=0   
+2018-10-10 10:45:17,600 p=29723 u=mford |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-10-10 10:45:17,600 p=29723 u=mford |  rtr1                       : ok=2    changed=1    unreachable=0    failed=0   
+2018-10-10 10:45:17,600 p=29723 u=mford |  rtr2                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-10 10:45:17,601 p=29723 u=mford |  rtr3                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-10 10:45:17,601 p=29723 u=mford |  rtr4                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-10 10:49:43,061 p=29967 u=mford |   [WARNING]: While constructing a mapping from /Users/mford/Documents/github-workspace/mpoc/inventory-clear-index.yml, line 2, column 3, found a
+duplicate dict key (tasks). Using last defined value only.
+
+2018-10-10 10:49:43,665 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-10 10:49:43,671 p=29967 u=mford |  PLAY [Remove index.html from webserver] ***************************************************************************************************************
+2018-10-10 10:49:43,683 p=29967 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-10 10:49:46,283 p=29967 u=mford |  ok: [34.229.144.96]
+2018-10-10 10:49:46,303 p=29967 u=mford |  TASK [remove index.html] ******************************************************************************************************************************
+2018-10-10 10:49:47,812 p=29967 u=mford |  changed: [34.229.144.96]
+2018-10-10 10:49:47,816 p=29967 u=mford |  RUNNING HANDLER [restart_apache] **********************************************************************************************************************
+2018-10-10 10:49:50,404 p=29967 u=mford |  changed: [34.229.144.96]
+2018-10-10 10:49:50,407 p=29967 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-10 10:49:50,407 p=29967 u=mford |  34.229.144.96              : ok=3    changed=2    unreachable=0    failed=0   
+2018-10-10 12:13:38,790 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-10 12:13:38,798 p=30605 u=mford |  PLAY [cisco] ******************************************************************************************************************************************
+2018-10-10 12:13:38,813 p=30605 u=mford |  TASK [show version] ***********************************************************************************************************************************
+2018-10-10 12:13:40,324 p=30617 u=mford |  network_os is set to ios
+2018-10-10 12:13:40,330 p=30618 u=mford |  network_os is set to ios
+2018-10-10 12:13:40,338 p=30615 u=mford |  network_os is set to ios
+2018-10-10 12:13:40,350 p=30616 u=mford |  network_os is set to ios
+2018-10-10 12:13:40,985 p=30643 u=mford | paramiko [18.205.20.223] starting thread (client mode): 0x676ae90L
+2018-10-10 12:13:40,985 p=30643 u=mford | paramiko [18.205.20.223] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:13:40,986 p=30637 u=mford | paramiko [54.89.192.126] starting thread (client mode): 0x8d35e90L
+2018-10-10 12:13:40,986 p=30640 u=mford | paramiko [54.242.127.146] starting thread (client mode): 0x111aae90L
+2018-10-10 12:13:40,987 p=30637 u=mford | paramiko [54.89.192.126] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:13:40,987 p=30640 u=mford | paramiko [54.242.127.146] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:13:40,987 p=30646 u=mford | paramiko [34.227.57.70] starting thread (client mode): 0xbbdee90L
+2018-10-10 12:13:40,988 p=30646 u=mford | paramiko [34.227.57.70] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:13:41,021 p=30643 u=mford | paramiko [18.205.20.223] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:13:41,021 p=30643 u=mford | paramiko [18.205.20.223] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:13:41,022 p=30640 u=mford | paramiko [54.242.127.146] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:13:41,022 p=30637 u=mford | paramiko [54.89.192.126] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:13:41,022 p=30640 u=mford | paramiko [54.242.127.146] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:13:41,023 p=30637 u=mford | paramiko [54.89.192.126] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:13:41,023 p=30643 u=mford | paramiko [18.205.20.223] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:13:41,023 p=30643 u=mford | paramiko [18.205.20.223] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:13:41,023 p=30646 u=mford | paramiko [34.227.57.70] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:13:41,024 p=30646 u=mford | paramiko [34.227.57.70] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:13:41,024 p=30643 u=mford | paramiko [18.205.20.223] HostKey agreed: ssh-rsa
+2018-10-10 12:13:41,024 p=30637 u=mford | paramiko [54.89.192.126] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:13:41,024 p=30643 u=mford | paramiko [18.205.20.223] Cipher agreed: aes128-ctr
+2018-10-10 12:13:41,024 p=30637 u=mford | paramiko [54.89.192.126] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:13:41,025 p=30640 u=mford | paramiko [54.242.127.146] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:13:41,025 p=30643 u=mford | paramiko [18.205.20.223] MAC agreed: hmac-sha2-256
+2018-10-10 12:13:41,025 p=30637 u=mford | paramiko [54.89.192.126] HostKey agreed: ssh-rsa
+2018-10-10 12:13:41,025 p=30646 u=mford | paramiko [34.227.57.70] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:13:41,025 p=30640 u=mford | paramiko [54.242.127.146] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:13:41,026 p=30637 u=mford | paramiko [54.89.192.126] Cipher agreed: aes128-ctr
+2018-10-10 12:13:41,026 p=30643 u=mford | paramiko [18.205.20.223] Compression agreed: none
+2018-10-10 12:13:41,026 p=30646 u=mford | paramiko [34.227.57.70] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:13:41,026 p=30640 u=mford | paramiko [54.242.127.146] HostKey agreed: ssh-rsa
+2018-10-10 12:13:41,026 p=30637 u=mford | paramiko [54.89.192.126] MAC agreed: hmac-sha2-256
+2018-10-10 12:13:41,026 p=30646 u=mford | paramiko [34.227.57.70] HostKey agreed: ssh-rsa
+2018-10-10 12:13:41,027 p=30640 u=mford | paramiko [54.242.127.146] Cipher agreed: aes128-ctr
+2018-10-10 12:13:41,027 p=30637 u=mford | paramiko [54.89.192.126] Compression agreed: none
+2018-10-10 12:13:41,027 p=30640 u=mford | paramiko [54.242.127.146] MAC agreed: hmac-sha2-256
+2018-10-10 12:13:41,027 p=30646 u=mford | paramiko [34.227.57.70] Cipher agreed: aes128-ctr
+2018-10-10 12:13:41,028 p=30640 u=mford | paramiko [54.242.127.146] Compression agreed: none
+2018-10-10 12:13:41,028 p=30646 u=mford | paramiko [34.227.57.70] MAC agreed: hmac-sha2-256
+2018-10-10 12:13:41,029 p=30646 u=mford | paramiko [34.227.57.70] Compression agreed: none
+2018-10-10 12:13:41,296 p=30637 u=mford | paramiko [54.89.192.126] Got server p (2048 bits)
+2018-10-10 12:13:41,297 p=30643 u=mford | paramiko [18.205.20.223] Got server p (2048 bits)
+2018-10-10 12:13:41,298 p=30640 u=mford | paramiko [54.242.127.146] Got server p (2048 bits)
+2018-10-10 12:13:41,298 p=30646 u=mford | paramiko [34.227.57.70] Got server p (2048 bits)
+2018-10-10 12:13:41,429 p=30640 u=mford | paramiko [54.242.127.146] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:13:41,429 p=30646 u=mford | paramiko [34.227.57.70] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:13:41,429 p=30637 u=mford | paramiko [54.89.192.126] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:13:41,429 p=30643 u=mford | paramiko [18.205.20.223] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:13:41,431 p=30646 u=mford | paramiko [34.227.57.70] Switch to new keys ...
+2018-10-10 12:13:41,431 p=30640 u=mford | paramiko [54.242.127.146] Switch to new keys ...
+2018-10-10 12:13:41,431 p=30637 u=mford | paramiko [54.89.192.126] Switch to new keys ...
+2018-10-10 12:13:41,431 p=30643 u=mford | paramiko [18.205.20.223] Switch to new keys ...
+2018-10-10 12:13:41,434 p=30643 u=mford | paramiko [18.205.20.223] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:13:41,438 p=30646 u=mford | paramiko [34.227.57.70] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:13:41,438 p=30637 u=mford | paramiko [54.89.192.126] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:13:41,448 p=30640 u=mford | paramiko [54.242.127.146] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:13:41,704 p=30643 u=mford | paramiko [18.205.20.223] userauth is OK
+2018-10-10 12:13:41,705 p=30637 u=mford | paramiko [54.89.192.126] userauth is OK
+2018-10-10 12:13:41,705 p=30640 u=mford | paramiko [54.242.127.146] userauth is OK
+2018-10-10 12:13:41,705 p=30646 u=mford | paramiko [34.227.57.70] userauth is OK
+2018-10-10 12:13:41,745 p=30643 u=mford | paramiko [18.205.20.223] Authentication (publickey) successful!
+2018-10-10 12:13:41,746 p=30640 u=mford | paramiko [54.242.127.146] Authentication (publickey) successful!
+2018-10-10 12:13:41,746 p=30646 u=mford | paramiko [34.227.57.70] Authentication (publickey) successful!
+2018-10-10 12:13:41,746 p=30637 u=mford | paramiko [54.89.192.126] Authentication (publickey) successful!
+2018-10-10 12:13:41,748 p=30637 u=mford | paramiko [54.89.192.126] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:13:41,749 p=30646 u=mford | paramiko [34.227.57.70] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:13:41,751 p=30640 u=mford | paramiko [54.242.127.146] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:13:41,753 p=30643 u=mford | paramiko [18.205.20.223] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:13:41,786 p=30637 u=mford | paramiko [54.89.192.126] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:13:41,787 p=30637 u=mford | paramiko [54.89.192.126] Secsh channel 0 opened.
+2018-10-10 12:13:41,787 p=30646 u=mford | paramiko [34.227.57.70] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:13:41,788 p=30646 u=mford | paramiko [34.227.57.70] Secsh channel 0 opened.
+2018-10-10 12:13:41,788 p=30640 u=mford | paramiko [54.242.127.146] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:13:41,789 p=30640 u=mford | paramiko [54.242.127.146] Secsh channel 0 opened.
+2018-10-10 12:13:41,790 p=30643 u=mford | paramiko [18.205.20.223] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:13:41,791 p=30643 u=mford | paramiko [18.205.20.223] Secsh channel 0 opened.
+2018-10-10 12:13:41,854 p=30640 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,854 p=30646 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,854 p=30637 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,857 p=30643 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,891 p=30637 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,891 p=30646 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,892 p=30640 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:41,895 p=30643 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:13:43,790 p=30605 u=mford |  ok: [rtr3]
+2018-10-10 12:13:43,793 p=30605 u=mford |  ok: [rtr4]
+2018-10-10 12:13:43,794 p=30605 u=mford |  ok: [rtr2]
+2018-10-10 12:13:43,794 p=30605 u=mford |  ok: [rtr1]
+2018-10-10 12:13:43,810 p=30605 u=mford |  TASK [set_fact] ***************************************************************************************************************************************
+2018-10-10 12:13:46,587 p=30605 u=mford |  ok: [rtr3]
+2018-10-10 12:13:46,595 p=30605 u=mford |  ok: [rtr4]
+2018-10-10 12:13:46,595 p=30605 u=mford |  ok: [rtr2]
+2018-10-10 12:13:46,596 p=30605 u=mford |  ok: [rtr1]
+2018-10-10 12:13:46,606 p=30605 u=mford |  TASK [debug] ******************************************************************************************************************************************
+2018-10-10 12:13:48,662 p=30605 u=mford |  ok: [rtr2] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 12:13:48,663 p=30605 u=mford |  ok: [rtr1] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 12:13:48,666 p=30605 u=mford |  ok: [rtr3] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 12:13:48,679 p=30605 u=mford |  ok: [rtr4] => {
+    "ver": [
+        "16.08.01"
+    ]
+}
+2018-10-10 12:13:48,684 p=30643 u=mford | paramiko [18.205.20.223] [chan 0] EOF sent (0)
+2018-10-10 12:13:48,697 p=30643 u=mford | paramiko [18.205.20.223] EOF in transport thread
+2018-10-10 12:13:48,702 p=30646 u=mford | paramiko [34.227.57.70] [chan 0] EOF sent (0)
+2018-10-10 12:13:48,793 p=30646 u=mford | paramiko [34.227.57.70] EOF in transport thread
+2018-10-10 12:13:48,802 p=30615 u=mford |  shutdown complete
+2018-10-10 12:13:48,820 p=30637 u=mford | paramiko [54.89.192.126] [chan 0] EOF sent (0)
+2018-10-10 12:13:48,907 p=30637 u=mford | paramiko [54.89.192.126] EOF in transport thread
+2018-10-10 12:13:48,920 p=30616 u=mford |  shutdown complete
+2018-10-10 12:13:48,938 p=30640 u=mford | paramiko [54.242.127.146] [chan 0] EOF sent (0)
+2018-10-10 12:13:48,942 p=30640 u=mford | paramiko [54.242.127.146] EOF in transport thread
+2018-10-10 12:13:48,949 p=30605 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-10 12:13:48,949 p=30605 u=mford |  rtr1                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 12:13:48,949 p=30605 u=mford |  rtr2                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 12:13:48,949 p=30605 u=mford |  rtr3                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 12:13:48,949 p=30605 u=mford |  rtr4                       : ok=3    changed=0    unreachable=0    failed=0   
+2018-10-10 12:13:49,039 p=30617 u=mford |  shutdown complete
+2018-10-10 12:13:49,048 p=30618 u=mford |  shutdown complete
+2018-10-10 12:15:46,285 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-10 12:15:46,292 p=30772 u=mford |  PLAY [build IOS XE inventory] *************************************************************************************************************************
+2018-10-10 12:15:46,308 p=30772 u=mford |  TASK [gathering IOS XE facts] *************************************************************************************************************************
+2018-10-10 12:15:47,935 p=30784 u=mford |  network_os is set to ios
+2018-10-10 12:15:47,936 p=30785 u=mford |  network_os is set to ios
+2018-10-10 12:15:47,942 p=30783 u=mford |  network_os is set to ios
+2018-10-10 12:15:47,943 p=30782 u=mford |  network_os is set to ios
+2018-10-10 12:15:48,114 p=30809 u=mford | paramiko [54.89.192.126] starting thread (client mode): 0x4bb7e90L
+2018-10-10 12:15:48,115 p=30809 u=mford | paramiko [54.89.192.126] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:15:48,150 p=30809 u=mford | paramiko [54.89.192.126] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:15:48,150 p=30809 u=mford | paramiko [54.89.192.126] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:15:48,151 p=30809 u=mford | paramiko [54.89.192.126] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:15:48,151 p=30809 u=mford | paramiko [54.89.192.126] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:15:48,152 p=30809 u=mford | paramiko [54.89.192.126] HostKey agreed: ssh-rsa
+2018-10-10 12:15:48,152 p=30809 u=mford | paramiko [54.89.192.126] Cipher agreed: aes128-ctr
+2018-10-10 12:15:48,152 p=30809 u=mford | paramiko [54.89.192.126] MAC agreed: hmac-sha2-256
+2018-10-10 12:15:48,153 p=30809 u=mford | paramiko [54.89.192.126] Compression agreed: none
+2018-10-10 12:15:48,427 p=30809 u=mford | paramiko [54.89.192.126] Got server p (2048 bits)
+2018-10-10 12:15:48,561 p=30809 u=mford | paramiko [54.89.192.126] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:15:48,562 p=30809 u=mford | paramiko [54.89.192.126] Switch to new keys ...
+2018-10-10 12:15:48,564 p=30809 u=mford | paramiko [54.89.192.126] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:15:48,675 p=30813 u=mford | paramiko [34.227.57.70] starting thread (client mode): 0xb5d5e90L
+2018-10-10 12:15:48,676 p=30813 u=mford | paramiko [34.227.57.70] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:15:48,676 p=30814 u=mford | paramiko [18.205.20.223] starting thread (client mode): 0xa5eae90L
+2018-10-10 12:15:48,677 p=30814 u=mford | paramiko [18.205.20.223] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:15:48,679 p=30806 u=mford | paramiko [54.242.127.146] starting thread (client mode): 0xb7dde90L
+2018-10-10 12:15:48,679 p=30806 u=mford | paramiko [54.242.127.146] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-10-10 12:15:48,712 p=30813 u=mford | paramiko [34.227.57.70] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:15:48,713 p=30813 u=mford | paramiko [34.227.57.70] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:15:48,713 p=30814 u=mford | paramiko [18.205.20.223] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:15:48,714 p=30814 u=mford | paramiko [18.205.20.223] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:15:48,714 p=30813 u=mford | paramiko [34.227.57.70] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:15:48,715 p=30814 u=mford | paramiko [18.205.20.223] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:15:48,715 p=30813 u=mford | paramiko [34.227.57.70] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:15:48,715 p=30813 u=mford | paramiko [34.227.57.70] HostKey agreed: ssh-rsa
+2018-10-10 12:15:48,715 p=30814 u=mford | paramiko [18.205.20.223] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:15:48,716 p=30806 u=mford | paramiko [54.242.127.146] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-10-10 12:15:48,716 p=30813 u=mford | paramiko [34.227.57.70] Cipher agreed: aes128-ctr
+2018-10-10 12:15:48,716 p=30814 u=mford | paramiko [18.205.20.223] HostKey agreed: ssh-rsa
+2018-10-10 12:15:48,716 p=30806 u=mford | paramiko [54.242.127.146] Connected (version 2.0, client Cisco-1.25)
+2018-10-10 12:15:48,717 p=30813 u=mford | paramiko [34.227.57.70] MAC agreed: hmac-sha2-256
+2018-10-10 12:15:48,717 p=30814 u=mford | paramiko [18.205.20.223] Cipher agreed: aes128-ctr
+2018-10-10 12:15:48,717 p=30813 u=mford | paramiko [34.227.57.70] Compression agreed: none
+2018-10-10 12:15:48,717 p=30814 u=mford | paramiko [18.205.20.223] MAC agreed: hmac-sha2-256
+2018-10-10 12:15:48,718 p=30806 u=mford | paramiko [54.242.127.146] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-10-10 12:15:48,718 p=30814 u=mford | paramiko [18.205.20.223] Compression agreed: none
+2018-10-10 12:15:48,718 p=30806 u=mford | paramiko [54.242.127.146] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-10-10 12:15:48,719 p=30806 u=mford | paramiko [54.242.127.146] HostKey agreed: ssh-rsa
+2018-10-10 12:15:48,719 p=30806 u=mford | paramiko [54.242.127.146] Cipher agreed: aes128-ctr
+2018-10-10 12:15:48,720 p=30806 u=mford | paramiko [54.242.127.146] MAC agreed: hmac-sha2-256
+2018-10-10 12:15:48,720 p=30806 u=mford | paramiko [54.242.127.146] Compression agreed: none
+2018-10-10 12:15:48,838 p=30809 u=mford | paramiko [54.89.192.126] userauth is OK
+2018-10-10 12:15:48,885 p=30809 u=mford | paramiko [54.89.192.126] Authentication (publickey) successful!
+2018-10-10 12:15:48,902 p=30809 u=mford | paramiko [54.89.192.126] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:15:48,944 p=30809 u=mford | paramiko [54.89.192.126] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:15:48,944 p=30809 u=mford | paramiko [54.89.192.126] Secsh channel 0 opened.
+2018-10-10 12:15:49,008 p=30813 u=mford | paramiko [34.227.57.70] Got server p (2048 bits)
+2018-10-10 12:15:49,008 p=30809 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,008 p=30806 u=mford | paramiko [54.242.127.146] Got server p (2048 bits)
+2018-10-10 12:15:49,008 p=30814 u=mford | paramiko [18.205.20.223] Got server p (2048 bits)
+2018-10-10 12:15:49,046 p=30809 u=mford | paramiko [54.89.192.126] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,139 p=30814 u=mford | paramiko [18.205.20.223] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:15:49,139 p=30813 u=mford | paramiko [34.227.57.70] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:15:49,139 p=30806 u=mford | paramiko [54.242.127.146] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-10-10 12:15:49,140 p=30814 u=mford | paramiko [18.205.20.223] Switch to new keys ...
+2018-10-10 12:15:49,140 p=30813 u=mford | paramiko [34.227.57.70] Switch to new keys ...
+2018-10-10 12:15:49,141 p=30806 u=mford | paramiko [54.242.127.146] Switch to new keys ...
+2018-10-10 12:15:49,170 p=30814 u=mford | paramiko [18.205.20.223] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:15:49,170 p=30813 u=mford | paramiko [34.227.57.70] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:15:49,171 p=30806 u=mford | paramiko [54.242.127.146] Trying discovered key cc1e02296548ec6b599278d98d6246ad in /Users/mford/Documents/github-workspace/mpoc/../MAF-disney-router-opendemo-private.pem
+2018-10-10 12:15:49,416 p=30814 u=mford | paramiko [18.205.20.223] userauth is OK
+2018-10-10 12:15:49,416 p=30813 u=mford | paramiko [34.227.57.70] userauth is OK
+2018-10-10 12:15:49,416 p=30806 u=mford | paramiko [54.242.127.146] userauth is OK
+2018-10-10 12:15:49,458 p=30814 u=mford | paramiko [18.205.20.223] Authentication (publickey) successful!
+2018-10-10 12:15:49,458 p=30813 u=mford | paramiko [34.227.57.70] Authentication (publickey) successful!
+2018-10-10 12:15:49,459 p=30806 u=mford | paramiko [54.242.127.146] Authentication (publickey) successful!
+2018-10-10 12:15:49,474 p=30813 u=mford | paramiko [34.227.57.70] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:15:49,474 p=30814 u=mford | paramiko [18.205.20.223] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:15:49,475 p=30806 u=mford | paramiko [54.242.127.146] [chan 0] Max packet in: 32768 bytes
+2018-10-10 12:15:49,511 p=30813 u=mford | paramiko [34.227.57.70] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:15:49,511 p=30814 u=mford | paramiko [18.205.20.223] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:15:49,512 p=30813 u=mford | paramiko [34.227.57.70] Secsh channel 0 opened.
+2018-10-10 12:15:49,512 p=30814 u=mford | paramiko [18.205.20.223] Secsh channel 0 opened.
+2018-10-10 12:15:49,513 p=30806 u=mford | paramiko [54.242.127.146] [chan 0] Max packet out: 4096 bytes
+2018-10-10 12:15:49,513 p=30806 u=mford | paramiko [54.242.127.146] Secsh channel 0 opened.
+2018-10-10 12:15:49,577 p=30814 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,577 p=30813 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,579 p=30806 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,614 p=30814 u=mford | paramiko [18.205.20.223] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,615 p=30813 u=mford | paramiko [34.227.57.70] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:49,616 p=30806 u=mford | paramiko [54.242.127.146] [chan 0] Sesch channel 0 request ok
+2018-10-10 12:15:51,406 p=30772 u=mford |  ok: [rtr3]
+2018-10-10 12:15:51,882 p=30772 u=mford |  ok: [rtr1]
+2018-10-10 12:15:51,914 p=30772 u=mford |  ok: [rtr4]
+2018-10-10 12:15:51,950 p=30772 u=mford |  ok: [rtr2]
+2018-10-10 12:15:51,966 p=30772 u=mford |  TASK [create HTML report] *****************************************************************************************************************************
+2018-10-10 12:15:52,826 p=30772 u=mford |  changed: [rtr1 -> localhost]
+2018-10-10 12:15:52,829 p=30814 u=mford | paramiko [18.205.20.223] [chan 0] EOF sent (0)
+2018-10-10 12:15:52,860 p=30814 u=mford | paramiko [18.205.20.223] EOF in transport thread
+2018-10-10 12:15:52,864 p=30813 u=mford | paramiko [34.227.57.70] [chan 0] EOF sent (0)
+2018-10-10 12:15:52,924 p=30813 u=mford | paramiko [34.227.57.70] EOF in transport thread
+2018-10-10 12:15:52,933 p=30809 u=mford | paramiko [54.89.192.126] [chan 0] EOF sent (0)
+2018-10-10 12:15:52,965 p=30782 u=mford |  shutdown complete
+2018-10-10 12:15:53,005 p=30809 u=mford | paramiko [54.89.192.126] EOF in transport thread
+2018-10-10 12:15:53,033 p=30783 u=mford |  shutdown complete
+2018-10-10 12:15:53,051 p=30806 u=mford | paramiko [54.242.127.146] [chan 0] EOF sent (0)
+2018-10-10 12:15:53,095 p=30806 u=mford | paramiko [54.242.127.146] EOF in transport thread
+2018-10-10 12:15:53,124 p=30772 u=mford |  PLAY [Copy inventory document to webserver] ***********************************************************************************************************
+2018-10-10 12:15:53,129 p=30772 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-10 12:15:53,151 p=30784 u=mford |  shutdown complete
+2018-10-10 12:15:53,219 p=30785 u=mford |  shutdown complete
+2018-10-10 12:15:55,896 p=30772 u=mford |  ok: [34.229.144.96]
+2018-10-10 12:15:55,915 p=30772 u=mford |  TASK [copy file to webserver] *************************************************************************************************************************
+2018-10-10 12:15:58,321 p=30772 u=mford |  changed: [34.229.144.96]
+2018-10-10 12:15:58,323 p=30772 u=mford |  RUNNING HANDLER [restart_apache] **********************************************************************************************************************
+2018-10-10 12:16:00,773 p=30772 u=mford |  changed: [34.229.144.96]
+2018-10-10 12:16:00,782 p=30772 u=mford |  PLAY [Delete local copy of inventory] *****************************************************************************************************************
+2018-10-10 12:16:00,788 p=30772 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-10 12:16:01,437 p=30772 u=mford |  ok: [localhost]
+2018-10-10 12:16:01,454 p=30772 u=mford |  TASK [Delete local copy of inventory inventory] *******************************************************************************************************
+2018-10-10 12:16:01,888 p=30772 u=mford |  changed: [localhost]
+2018-10-10 12:16:01,891 p=30772 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-10 12:16:01,891 p=30772 u=mford |  34.229.144.96              : ok=3    changed=2    unreachable=0    failed=0   
+2018-10-10 12:16:01,891 p=30772 u=mford |  localhost                  : ok=2    changed=1    unreachable=0    failed=0   
+2018-10-10 12:16:01,891 p=30772 u=mford |  rtr1                       : ok=2    changed=1    unreachable=0    failed=0   
+2018-10-10 12:16:01,891 p=30772 u=mford |  rtr2                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-10 12:16:01,892 p=30772 u=mford |  rtr3                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-10 12:16:01,892 p=30772 u=mford |  rtr4                       : ok=1    changed=0    unreachable=0    failed=0   
+2018-10-11 11:06:09,185 p=32310 u=mford |   [WARNING]: While constructing a mapping from /Users/mford/Documents/github-workspace/mpoc/inventory-clear-index.yml, line 2, column 3, found a
+duplicate dict key (tasks). Using last defined value only.
+
+2018-10-11 11:06:09,872 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-11 11:06:09,879 p=32310 u=mford |  PLAY [Remove index.html from webserver] ***************************************************************************************************************
+2018-10-11 11:06:09,896 p=32310 u=mford |  TASK [Gathering Facts] ********************************************************************************************************************************
+2018-10-11 11:06:13,182 p=32310 u=mford |  ok: [34.229.144.96]
+2018-10-11 11:06:13,199 p=32310 u=mford |  TASK [remove index.html] ******************************************************************************************************************************
+2018-10-11 11:06:14,718 p=32310 u=mford |  changed: [34.229.144.96]
+2018-10-11 11:06:14,720 p=32310 u=mford |  RUNNING HANDLER [restart_apache] **********************************************************************************************************************
+2018-10-11 11:06:17,300 p=32310 u=mford |  changed: [34.229.144.96]
+2018-10-11 11:06:17,303 p=32310 u=mford |  PLAY RECAP ********************************************************************************************************************************************
+2018-10-11 11:06:17,303 p=32310 u=mford |  34.229.144.96              : ok=3    changed=2    unreachable=0    failed=0   

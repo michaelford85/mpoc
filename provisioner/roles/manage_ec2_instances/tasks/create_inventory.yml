@@ -1,0 +1,5 @@
+- name: ios mode - setup inventory
+  include_tasks: "addhost_ios.yml"
+  when:
+    - iosworkshop
+    - not f5workshop

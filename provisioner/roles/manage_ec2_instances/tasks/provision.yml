@@ -1,0 +1,26 @@
+- name: ensure workshop folder {{ec2_name_prefix}} exists
+  file:
+    path: "{{ playbook_dir }}/{{ec2_name_prefix}}"
+    state: directory
+
+## These AWS resources are used for every workshop type
+## This includes VPC, subnet, Security Group, Internet Gateway and route table
+- name: provision aws resources
+  include_tasks: resources.yml
+
+# This duplicates the above when networking workshop uses 2 VPCs
+- name: provision networking aws resources
+  include_tasks: resources_ios.yml
+  when: iosworkshop
+
+- name: provision ansible networking workshop instances
+  include_tasks: instances_ios.yml
+  when:
+    - iosworkshop
+    - not f5workshop
+
+- name: provision ansible netscaler workshop instances
+  include_tasks: instances_f5.yml
+  when:
+    - f5workshop
+    - not iosworkshop

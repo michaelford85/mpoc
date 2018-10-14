@@ -1,0 +1,25 @@
+---
+- hosts: netscaler
+  gather_facts: no
+
+  tasks:
+
+  - name: Add HTTP Service
+    netscaler_service:
+      nsip: "{{ nsip }}"
+      nitro_user: "{{ nitro_user }}"
+      nitro_pass: "{{ nitro_pass }}"
+      state: present
+      name: service-http-1
+      servicetype: HTTP
+      ipaddress: 10.78.0.1
+      port: 80
+
+      monitor_bindings:
+        - monitor-1
+
+  # - name: configure the “management” vrf
+  #   ios_config:
+  #   lines:
+  #     description oob mgmt vrf
+  #   parents: vrf definition management

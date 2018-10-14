@@ -1,0 +1,136 @@
+- name: Perform Checks to make sure this Playbook will complete successfully
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  tasks:
+      # Please read this, if you try to delete this task
+      # https://github.com/network-automation/linklight/issues/21
+    - name: make sure we are running correct Ansible Version
+      assert:
+        that:
+          - ansible_version.major >= 2
+          - ansible_version.minor >= 6
+
+      # netscalerworkshop and networking workshop are two different workshops
+    - name: make sure f5workshop is not turned on when iosworkshop is
+      assert:
+        msg: "f5workshop and iosworkshop are mutually exclusive. Choose only one."
+        that:
+          - not f5workshop
+      when: iosworkshop
+
+      # netscalerworkshop and networking workshop are two different workshops
+    - name: make sure iosworkshop is not turned on when f5workshop is
+      assert:
+        msg: "iosworkshop and f5workshop are mutually exclusive. Choose only one."
+        that:
+          - not iosworkshop
+      when: f5workshop
+
+    - name: run role to check if local environment setup will work with AWS
+      include_role:
+        name: aws_check_setup
+
+    # - name: if special lab is defined, make sure its a supported mode
+    #   assert:
+    #     that: special is match("all_cisco") or special is match("multivendor")
+    #   when:
+    #     - special is defined
+
+- name: Create lab instances in AWS
+  hosts: localhost
+  connection: local
+  become: no
+  gather_facts: no
+  vars:
+    teardown: false
+  roles:
+    - manage_ec2_instances
+
+# - name: wait for all nodes to have SSH reachability
+#   hosts: "managed_nodes:control_nodes"
+#   become: yes
+#   gather_facts: no
+#   roles:
+#     - connectivity_test
+
+# - name: Configure common options on managed nodes and control nodes
+#   hosts: "managed_nodes:control_nodes"
+#   become: yes
+#   roles:
+#     - user_accounts
+#     - common
+
+# - name: Setup Host routes for ansible control node and webserver when in networking mode
+#   hosts: "managed_nodes:control_nodes"
+#   become: no
+#   gather_facts: no
+#   roles:
+#     - { role: network_hostroutes, when: iosworkshop }
+
+# - name: GATHER AWS FACTS FOR ROUTERS
+#   hosts: access,core
+#   connection: local
+#   gather_facts: no
+#   roles:
+#     - { role: gather_router_facts }
+#
+# - name: CONFIGURE ACCESS ROUTERS
+#   hosts: access
+#   connection: local
+#   gather_facts: no
+#
+#   roles:
+#     - role: configure_routers
+#       vars:
+#         type: csr_access
+#         router3_tunnel: 100
+#         router4_tunnel: 101
+#
+# - name: CONFIGURE CORE ROUTERS
+#   hosts: core
+#   connection: local
+#   gather_facts: no
+#
+#   roles:
+#     - role: configure_routers
+#       vars:
+#         type: csr_core
+#         router1_tunnel: 100
+#         router2_tunnel: 101
+#         dci_tunnel: 200
+#
+# - name: CONFIGURE CORE ROUTERS
+#   hosts: dmvpn
+#   connection: local
+#   gather_facts: no
+#
+#   roles:
+#     - role: configure_routers
+#       vars:
+#         type: csr_hub
+
+# - name: CONFIGURE Netscaler WEBSERVERS host1 and host2
+#   hosts: lab_hosts
+#   become: yes
+#   gather_facts: no
+#   roles:
+#     - { role: webservers, when: netscalerworkshop }
+
+# - name: CONFIGURE CONTROL NODE
+#   hosts: control_nodes
+#   become: yes
+#   roles:
+#     - control_node
+#   tags: control_node
+
+
+
+# - name: setup netscaler nodes
+#   hosts: netscaler
+#   become: no
+#   connection: local
+#   gather_facts: no
+#   roles:
+#     - { role: netscaler_setup, when: netscalerworkshop }
