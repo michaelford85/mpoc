@@ -3,14 +3,36 @@
   hosts: cisco
   connection: network_cli
   gather_facts: no
+  vars:
+    ipv6_addresses:
+      host: rtr1
+        loopback20: 2001:DB8:0:1
+        loopback30: 2001:DB8:0:2
+        loopback40: 2001:DB8:0:3
+        loopback50: 2001:DB8:0:4
+      host: rtr2
+        loopback20: 2001:DB8:0:1
+        loopback30: 2001:DB8:0:2
+        loopback40: 2001:DB8:0:3
+        loopback50: 2001:DB8:0:4
+      host: rtr3
+        loopback20: 2001:DB8:0:1
+        loopback30: 2001:DB8:0:2
+        loopback40: 2001:DB8:0:3
+        loopback50: 2001:DB8:0:4
+      host: rtr4
+        loopback20: 2001:DB8:0:1
+        loopback30: 2001:DB8:0:2
+        loopback40: 2001:DB8:0:3
+        loopback50: 2001:DB8:0:4
 
   tasks:
 
-  - name: Include vars of iterate_hosts.yaml
-    include_vars:
-      file: iterate_hosts.yml
-      # name: ipv6_addresses
-    run_once: true
+  # - name: Include vars of iterate_hosts.yaml
+  #   include_vars:
+  #     file: iterate_hosts.yml
+  #     # name: ipv6_addresses
+  #   run_once: true
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
