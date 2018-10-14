@@ -33,7 +33,7 @@
         - ipv6 address "{{ item.value.loopback30 }}" eui-64
         - no shutdown
       parent: interface30
-    with_dict: "{{ ipv6_addresses }}"
+    with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
@@ -41,7 +41,7 @@
         - ipv6 address "{{ item.value.loopback40 }}" eui-64
         - no shutdown
       parent: interface40
-    with_dict: "{{ ipv6_addresses }}"
+    with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
@@ -49,4 +49,4 @@
         - ipv6 address "{{ item.value.loopback50 }}" eui-64
         - no shutdown
       parent: interface50
-    with_dict: "{{ ipv6_addresses }}"
+    with_items: "{{ ipv6_addresses }}"
