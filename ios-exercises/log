@@ -594,3 +594,9 @@ duplicate dict key (tasks). Using last defined value only.
 2018-10-14 17:20:05,645 p=69907 u=mford |  changed: [localhost]
 2018-10-14 17:20:05,648 p=69907 u=mford |  PLAY RECAP ***********************************************************************************************************
 2018-10-14 17:20:05,648 p=69907 u=mford |  localhost                  : ok=1    changed=1    unreachable=0    failed=0   
+2018-10-14 17:48:46,370 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-14 17:48:46,379 p=70347 u=mford |  PLAY [localhost] *****************************************************************************************************
+2018-10-14 17:48:46,395 p=70347 u=mford |  TASK [Parse CSV To YAML] *********************************************************************************************
+2018-10-14 17:48:47,192 p=70347 u=mford |  changed: [localhost]
+2018-10-14 17:48:47,196 p=70347 u=mford |  PLAY RECAP ***********************************************************************************************************
+2018-10-14 17:48:47,197 p=70347 u=mford |  localhost                  : ok=1    changed=1    unreachable=0    failed=0   
