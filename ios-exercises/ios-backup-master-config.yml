@@ -21,7 +21,7 @@
     file:
       path: "/tmp/ios-config-archives/"
       state: directory
-    delegate_to: localhost
+    delegate_to: 127.0.0.1
     become: yes
 
   - name: Rename Backup File
