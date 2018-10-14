@@ -14,8 +14,8 @@
 
   - name: List Find Output
     debug:
-      msg: {{ item }}
-    with_items: {{ find_output.files }}
+      msg: "{{ item }}"
+    with_items: "{{ find_output.files }}"
 
   # - name: Ensure Network Element Directory Exists
   #   file:
