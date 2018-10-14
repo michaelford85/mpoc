@@ -9,7 +9,7 @@
   - name: Find config file containing {{ inventory_hostname }}
     find:
       paths: "{{ playbook_dir}}/backup"
-      contains: "{{ inventory_hostname }}"
+      # contains: "{{ inventory_hostname }}"
     register: find_output
 
   - name: List Find Output
