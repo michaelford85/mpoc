@@ -1,14 +1,21 @@
 ---
 - hosts: localhost
   connection: local
-  #gather_facts: False
+  gather_facts: False
+  become: yes
 
   tasks:
 
-  - name: Recursively find /tmp files older than 2 days
+  - name: Find config file containing {{ inventory_hostname }}
     find:
       paths: "{{ playbook_dir}}/backup"
       contains: "{{ inventory_hostname }}"
+    register: find_output
+
+  - name: List Find Output
+    debug:
+      msg: {{ item }}
+    with_items: {{ find_output.files }}
 
   # - name: Ensure Network Element Directory Exists
   #   file:
