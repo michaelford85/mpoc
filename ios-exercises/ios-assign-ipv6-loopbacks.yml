@@ -8,8 +8,9 @@
 
   - name: Include vars of iterate_hosts.yaml
     include_vars:
-      file: iterate_hosts.yaml
+      file: iterate_hosts.yml
       name: ipv6_addresses
+    run_once: true
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
