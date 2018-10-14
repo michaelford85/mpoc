@@ -554,3 +554,43 @@ duplicate dict key (tasks). Using last defined value only.
 2018-10-11 11:06:17,300 p=32310 u=mford |  changed: [34.229.144.96]
 2018-10-11 11:06:17,303 p=32310 u=mford |  PLAY RECAP ********************************************************************************************************************************************
 2018-10-11 11:06:17,303 p=32310 u=mford |  34.229.144.96              : ok=3    changed=2    unreachable=0    failed=0   
+2018-10-14 17:16:12,403 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-14 17:16:12,411 p=69762 u=mford |  PLAY [build IOS XE inventory] ****************************************************************************************
+2018-10-14 17:16:12,424 p=69762 u=mford |  TASK [gathering IOS XE facts] ****************************************************************************************
+2018-10-14 17:16:13,899 p=69772 u=mford |  network_os is set to ios
+2018-10-14 17:16:13,900 p=69774 u=mford |  network_os is set to ios
+2018-10-14 17:16:13,901 p=69775 u=mford |  network_os is set to ios
+2018-10-14 17:16:13,901 p=69773 u=mford |  network_os is set to ios
+2018-10-14 17:16:24,155 p=69774 u=mford |  shutdown complete
+2018-10-14 17:16:24,709 p=69762 u=mford |  fatal: [rtr3]: FAILED! => {"msg": "timed out"}
+2018-10-14 17:16:24,720 p=69775 u=mford |  shutdown complete
+2018-10-14 17:16:24,720 p=69773 u=mford |  shutdown complete
+2018-10-14 17:16:24,720 p=69772 u=mford |  shutdown complete
+2018-10-14 17:16:25,289 p=69762 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "timed out"}
+2018-10-14 17:16:25,291 p=69762 u=mford |  fatal: [rtr2]: FAILED! => {"msg": "timed out"}
+2018-10-14 17:16:25,292 p=69762 u=mford |  fatal: [rtr4]: FAILED! => {"msg": "timed out"}
+2018-10-14 17:16:25,297 p=69762 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/mpoc/ios-exercises/parse-to-yaml.retry
+
+2018-10-14 17:16:25,297 p=69762 u=mford |  PLAY RECAP ***********************************************************************************************************
+2018-10-14 17:16:25,298 p=69762 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-10-14 17:16:25,298 p=69762 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-10-14 17:16:25,298 p=69762 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-10-14 17:16:25,298 p=69762 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-10-14 17:16:29,008 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-14 17:16:29,015 p=69811 u=mford |  PLAY [localhost] *****************************************************************************************************
+2018-10-14 17:16:29,028 p=69811 u=mford |  TASK [Parse CSV To YAML] *********************************************************************************************
+2018-10-14 17:16:29,783 p=69811 u=mford |  changed: [localhost]
+2018-10-14 17:16:29,787 p=69811 u=mford |  PLAY RECAP ***********************************************************************************************************
+2018-10-14 17:16:29,788 p=69811 u=mford |  localhost                  : ok=1    changed=1    unreachable=0    failed=0   
+2018-10-14 17:18:22,123 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-14 17:18:22,131 p=69856 u=mford |  PLAY [localhost] *****************************************************************************************************
+2018-10-14 17:18:22,145 p=69856 u=mford |  TASK [Parse CSV To YAML] *********************************************************************************************
+2018-10-14 17:18:22,902 p=69856 u=mford |  changed: [localhost]
+2018-10-14 17:18:22,908 p=69856 u=mford |  PLAY RECAP ***********************************************************************************************************
+2018-10-14 17:18:22,908 p=69856 u=mford |  localhost                  : ok=1    changed=1    unreachable=0    failed=0   
+2018-10-14 17:20:04,871 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-10-14 17:20:04,878 p=69907 u=mford |  PLAY [localhost] *****************************************************************************************************
+2018-10-14 17:20:04,892 p=69907 u=mford |  TASK [Parse CSV To YAML] *********************************************************************************************
+2018-10-14 17:20:05,645 p=69907 u=mford |  changed: [localhost]
+2018-10-14 17:20:05,648 p=69907 u=mford |  PLAY RECAP ***********************************************************************************************************
+2018-10-14 17:20:05,648 p=69907 u=mford |  localhost                  : ok=1    changed=1    unreachable=0    failed=0   
