@@ -11,11 +11,11 @@
     register: config_output
 
   - name: Create Directory ios-config-archives
-    local_action: sudo mkdir "{{ playbook_dir }}/ios-config-archives"
+    local_action: command sudo mkdir "{{ playbook_dir }}/ios-config-archives"
     run_once: yes
 
   - name: Create Directory for "{{ inventory_hostname }}"
-    local_action: sudo mkdir "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}"
+    local_action: command sudo mkdir "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}"
 
   # - name: Ensure Network Element Directory Exists
   #   file:
