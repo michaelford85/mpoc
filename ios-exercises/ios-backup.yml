@@ -1,0 +1,11 @@
+---
+- hosts: cisco
+  connection: network_cli
+  #gather_facts: False
+
+  tasks:
+
+  - name: Backup the config
+    ios_config:
+      backup: yes
+    register: config_output
