@@ -10,9 +10,16 @@
       backup: yes
     register: config_output
 
+  # - name: Ensure Network Element Directory Exists
+  #   file:
+  #     path: "{{ playbook_dir }}/backup/ios-config-archives/"
+  #     state: directory
+  #   delegate_to: localhost
+  #   become: yes
+
   - name: Ensure Network Element Directory Exists
     file:
-      path: "{{ playbook_dir }}/backup/ios-config-archives/"
+      path: "/tmp/ios-config-archives/"
       state: directory
     delegate_to: localhost
     become: yes
@@ -20,7 +27,7 @@
   - name: Rename Backup File
     copy:
       src: "{{config_output.backup_path}}"
-      dest: "{{ playbook_dir }}/backup/ios-config-archives/{{inventory_hostname}}_master.config"
+      dest: "/tmp/ios-config-archives/{{inventory_hostname}}_master.config"
     delegate_to: localhost
     become: yes
 
