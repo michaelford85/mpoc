@@ -1,0 +1,59 @@
+---
+- hosts: cisco
+  connection: network_cli
+  #gather_facts: False
+
+  tasks:
+
+  - name: Backup the config
+    ios_config:
+      backup: yes
+    register: config_output
+
+  - name: Ensure Network Element Directory Exists
+    file:
+      path: "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}/"
+      state: directory
+    delegate_to: localhost
+    become: yes
+
+  - name: Rename Backup File
+    copy:
+      src: "{{config_output.backup_path}}"
+      dest: "{{ playbook_dir }}/{{inventory_hostname}}/{{inventory_hostname}}_master.config"
+    delegate_to: localhost
+    become: yes
+
+  - name: Remove Non Config Lines
+    lineinfile:
+      path: "{{ playbook_dir }}/{{inventory_hostname}}/{{inventory_hostname}}_master.config"
+      line: "Building configuration..."
+      state: absent
+    delegate_to: localhost
+    become: yes
+
+  - name: Remove Non Config Lines - Regexp
+    lineinfile:
+      path: "{{ playbook_dir }}/{{inventory_hostname}}/{{inventory_hostname}}_master.config"
+      regexp: 'Current configuration.*'
+      state: absent
+    delegate_to: localhost
+    become: yes
+
+  - name: Remove Local Backup Directory
+    file:
+      path: ./backup/
+      state: absent
+    delegate_to: localhost
+    become: yes
+
+  - name: Push Configuration Backup to GitHub Repository
+    shell: "{{ item }}"
+    args:
+      chdir: ../ios-config-archives/
+    with_items:
+      - "git add ."
+      - "git commit -m 'Config Backup {{inventory_hostname}}_master.config'"
+      - "git push"
+    delegate_to: localhost
+    become: yes
