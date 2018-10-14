@@ -10,12 +10,19 @@
       backup: yes
     register: config_output
 
-  - name: Ensure Network Element Directory Exists
-    file:
-      path: "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}/"
-      state: directory
-    delegate_to: localhost
-    become: yes
+  - name: Create Directory ios-config-archives
+    local_action: sudo mkdir "{{ playbook_dir }}/ios-config-archives"
+    run_once: yes
+
+  - name: Create Directory for "{{ inventory_hostname }}"
+    local_action: sudo mkdir "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}"
+
+  # - name: Ensure Network Element Directory Exists
+  #   file:
+  #     path: "{{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}/"
+  #     state: directory
+  #   delegate_to: localhost
+  #   become: yes
 
   - name: Rename Backup File
     copy:
