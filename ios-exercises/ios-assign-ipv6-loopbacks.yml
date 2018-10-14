@@ -24,7 +24,7 @@
       lines:
         - ipv6 address "{{ item.loopback20 }}" eui-64
         - no shutdown
-      parent: interface20
+      parents: interface20
     with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
@@ -32,7 +32,7 @@
       lines:
         - ipv6 address "{{ item.loopback30 }}" eui-64
         - no shutdown
-      parent: interface30
+      parents: interface30
     with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
@@ -40,7 +40,7 @@
       lines:
         - ipv6 address "{{ item.loopback40 }}" eui-64
         - no shutdown
-      parent: interface40
+      parents: interface40
     with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
@@ -48,5 +48,5 @@
       lines:
         - ipv6 address "{{ item.loopback50 }}" eui-64
         - no shutdown
-      parent: interface50
+      parents: interface50
     with_items: "{{ ipv6_addresses }}"
