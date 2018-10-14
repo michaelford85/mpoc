@@ -6,7 +6,7 @@
 
   tasks:
 
-  - name: Include vars of iterate_hosts.yaml into the 'ipv6_addresses' variable
+  - name: Include vars of iterate_hosts.yaml
     include_vars:
     file: iterate_hosts.yaml
     name: ipv6_addresses
