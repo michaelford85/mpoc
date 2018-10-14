@@ -20,7 +20,7 @@
   - name: Rename Backup File
     copy:
       src: "{{config_output.backup_path}}"
-      dest: "{{ playbook_dir }}//backup/ios-config-archives/{{inventory_hostname}}_master.config"
+      dest: "{{ playbook_dir }}/backup/ios-config-archives/{{inventory_hostname}}_master.config"
     delegate_to: localhost
     become: yes
 
