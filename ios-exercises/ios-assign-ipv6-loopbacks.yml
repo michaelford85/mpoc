@@ -3,13 +3,6 @@
   hosts: cisco
   connection: network_cli
   gather_facts: no
-  vars:
-    ipv6_addresses:
-      - host: "rtr1"
-        loopback20: "2001:DB8:0:1::"
-        loopback30: "2001:DB8:0:2::"
-        loopback40: "2001:DB8:0:3::"
-        loopback50: "2001:DB8:0:4::"
 
   tasks:
 
@@ -22,7 +15,7 @@
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
-        - ipv6 address "{{ item.loopback20 }}" eui-64
+        - "ipv6 address 2001:DB8:0:2:: eui-64"
         - no shutdown
       parents: interface20
     with_items: "{{ ipv6_addresses }}"
@@ -30,7 +23,7 @@
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
-        - ipv6 address "{{ item.loopback30 }}" eui-64
+        - "ipv6 address 2001:DB8:0:3:: eui-64"
         - no shutdown
       parents: interface30
     with_items: "{{ ipv6_addresses }}"
@@ -38,7 +31,7 @@
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
-        - ipv6 address "{{ item.loopback40 }}" eui-64
+        - "ipv6 address 2001:DB8:0:4:: eui-64"
         - no shutdown
       parents: interface40
     with_items: "{{ ipv6_addresses }}"
@@ -46,7 +39,7 @@
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
-        - ipv6 address "{{ item.loopback50 }}" eui-64
+        - "ipv6 address 2001:DB8:0:5:: eui-64"
         - no shutdown
       parents: interface50
     with_items: "{{ ipv6_addresses }}"
