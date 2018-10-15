@@ -18,7 +18,6 @@
         - "ipv6 address 2001:DB8:0:2:: eui-64"
         - no shutdown
       parents: interface20
-    with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
@@ -26,7 +25,6 @@
         - "ipv6 address 2001:DB8:0:3:: eui-64"
         - no shutdown
       parents: interface30
-    with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
@@ -34,7 +32,6 @@
         - "ipv6 address 2001:DB8:0:4:: eui-64"
         - no shutdown
       parents: interface40
-    with_items: "{{ ipv6_addresses }}"
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
@@ -42,4 +39,3 @@
         - "ipv6 address 2001:DB8:0:5:: eui-64"
         - no shutdown
       parents: interface50
-    with_items: "{{ ipv6_addresses }}"
