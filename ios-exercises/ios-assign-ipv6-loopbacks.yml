@@ -17,25 +17,25 @@
       lines:
         - "ipv6 address 2001:DB8:0:2:: eui-64"
         - no shutdown
-      parents: interface20
+      parents: interface loopback 20
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
         - "ipv6 address 2001:DB8:0:3:: eui-64"
         - no shutdown
-      parents: interface30
+      parents: interface loopback 30
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
         - "ipv6 address 2001:DB8:0:4:: eui-64"
         - no shutdown
-      parents: interface40
+      parents: interface loopback 40
 
   - name: Add IPv6 Addresses to all loopback interfaces on all hosts
     ios_config:
       lines:
         - "ipv6 address 2001:DB8:0:5:: eui-64"
         - no shutdown
-      parents: interface50
+      parents: interface loopback 50
