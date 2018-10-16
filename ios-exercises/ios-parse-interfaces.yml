@@ -1,18 +1,19 @@
 ---
-- hosts: cisco
+- name: Parse Interfaces on IOS routers
+  hosts: cisco
   connection: network_cli
   gather_facts: no
 
   tasks:
 
-  - name: import network-engine role
-    import_role:
-      name: ../roles/ansible-network.network-engine
-
   - name: run command on ios and return result
     cli:
       command: show interfaces
     register: interfaces
+
+  - name: import network-engine role
+    import_role:
+      name: ../roles/ansible-network.network-engine
 
   - name: parse interfaces using command_parser engine
     command_parser:
