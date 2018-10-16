@@ -16,6 +16,6 @@
 
   - name: parse interfaces using command_parser engine
     command_parser:
-      file: "parser_templates/show_interfaces.yaml"
+      file: "./parser_templates/show_interfaces.yml"
       content: "{{ interfaces.stdout }}"
       # content: "{{ lookup(‘file’, ‘show_interfaces’ }}"
