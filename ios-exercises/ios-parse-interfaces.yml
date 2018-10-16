@@ -1,0 +1,12 @@
+---
+- hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+- name: parse interfaces using command_parser engine
+  command_parser:
+    file: "parser_templates/show_interfaces.yaml"
+    content: "{{ interfaces.stdout }}"
+    # content: "{{ lookup(‘file’, ‘show_interfaces’ }}"
