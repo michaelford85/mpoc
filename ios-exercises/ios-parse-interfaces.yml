@@ -7,7 +7,7 @@
 
   - name: import network-engine role
     import_role:
-      name: ansible-network.network-engine
+      name: ../roles/ansible-network.network-engine
 
   - name: run command on ios and return result
     cli:
