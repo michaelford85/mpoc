@@ -14,10 +14,10 @@ ansible_ssh_private_key_file=~/.ssh/MAF-private.pem
 
 [cisco]
 
-rtr1 ansible_host=18.205.20.223
-rtr2 ansible_host=34.227.57.70
-rtr3 ansible_host=54.89.192.126
-rtr4 ansible_host=54.242.127.146
+rtr1 ansible_host=18.214.98.73
+rtr2 ansible_host=54.210.112.208
+rtr3 ansible_host=34.228.6.34
+rtr4 ansible_host=18.209.63.172
 
 [cisco:vars]
 ansible_network_os=ios

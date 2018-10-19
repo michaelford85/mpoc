@@ -1,0 +1,12 @@
+---
+- name: Get the running config from our routers
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: get active configuration from device
+    include_role:
+      name: ../roles/ansible-network.config_manager
+      tasks_from: get
