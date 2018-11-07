@@ -1,0 +1,17 @@
+---
+- name: Check for OOB config changes
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+
+  - name: configure the “management” vrf
+    include_role:
+      name: caretaker
+
+  # - name: configure the “management” vrf
+  #   ios_config:
+  #   lines:
+  #     description oob mgmt vrf
+  #   parents: vrf definition management

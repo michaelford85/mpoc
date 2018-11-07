@@ -36,6 +36,7 @@ _raw:
 import collections
 
 from ansible.plugins.lookup import LookupBase, display
+from ansible.module_utils.common._collections_compat import Mapping
 from ansible.module_utils.network.common.utils import to_list
 from ansible.module_utils.six import iteritems, string_types
 from ansible.module_utils._text import to_text, to_bytes
@@ -45,10 +46,6 @@ from ansible.errors import AnsibleError, AnsibleUndefinedVariable
 class LookupModule(LookupBase):
 
     def run(self, terms, variables, **kwargs):
-
-        convert_data_p = kwargs.get('convert_data', True)
-        lookup_template_vars = kwargs.get('template_vars', {})
-
         self.ds = variables.copy()
 
         config_lines = list()
@@ -60,14 +57,11 @@ class LookupModule(LookupBase):
             display.vvvv("File lookup using %s as file" % lookupfile)
 
             if lookupfile:
-                with open(to_bytes(lookupfile, errors='surrogate_or_strict'), 'rb') as f:
-                    template_data = to_text(f.read(), errors='surrogate_or_strict')
-
+                with open(to_bytes(lookupfile, errors='surrogate_or_strict'), 'rb'):
                     tasks = self._loader.load_from_file(lookupfile)
 
                     for task in tasks:
-                        name = task.pop('name', None)
-
+                        task.pop('name', None)
                         register = task.pop('register', None)
 
                         when = task.pop('when', None)
@@ -82,7 +76,7 @@ class LookupModule(LookupBase):
                             loop = self.template(loop, self.ds)
                             loop_result = list()
 
-                            if isinstance(loop, collections.Mapping):
+                            if isinstance(loop, Mapping):
                                 for loop_key, loop_value in iteritems(loop):
                                     self.ds['item'] = {'key': loop_key, 'value': loop_value}
                                     res = self._process_directive(task)
@@ -119,9 +113,8 @@ class LookupModule(LookupBase):
 
         for entry in block:
             task = entry.copy()
-
-            name = task.pop('name', None)
-            register = task.pop('register', None)
+            task.pop('name', None)
+            task.pop('register', None)
 
             when = task.pop('when', None)
             if when is not None:
@@ -138,7 +131,7 @@ class LookupModule(LookupBase):
                 if res:
                     results.extend(res)
 
-            elif isinstance(loop, collections.Mapping):
+            elif isinstance(loop, Mapping):
                 loop_result = list()
                 for loop_key, loop_value in iteritems(loop):
                     self.ds['item'] = {'key': loop_key, 'value': loop_value}
@@ -225,7 +218,7 @@ class LookupModule(LookupBase):
 
     def template(self, data, variables, convert_bare=False):
 
-        if isinstance(data, collections.Mapping):
+        if isinstance(data, Mapping):
             templated_data = {}
             for key, value in iteritems(data):
                 templated_key = self.template(key, variables, convert_bare=convert_bare)
@@ -252,7 +245,7 @@ class LookupModule(LookupBase):
         if not isinstance(value, bool):
             try:
                 value = int(value)
-            except Exception as exc:
+            except Exception:
                 if value is None or len(value) == 0:
                     return None
         return value

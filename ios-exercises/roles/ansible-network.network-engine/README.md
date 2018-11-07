@@ -18,6 +18,7 @@ Any open bugs and/or feature requests are tracked in [GitHub issues](https://git
 
 Interested in contributing to this role? Check out [CONTRIBUTING](https://github.com/ansible-network/network-engine/blob/devel/CONTRIBUTING.md) before submitting a pull request.
 
+
 ## Functions
 
 This section provides a list of the available functions that are included in

@@ -2,6 +2,65 @@
 Ansible Network network-engine
 ==============================
 
+.. _Ansible Network network-engine_v2.7.0:
+
+v2.7.0
+======
+
+.. _Ansible Network network-engine_v2.7.0_Major Changes:
+
+Major Changes
+-------------
+
+- Initial release of 2.7.0 ``network-engine`` Ansible role that is supported with Ansible 2.7.0
+
+
+.. _Ansible Network network-engine_v2.7.0_Bugfixes:
+
+Bugfixes
+--------
+
+- Fix native type conversion in json_template `network-engine#154 <https://github.com/ansible-network/network-engine/pull/154>`_.
+
+- Fix templating repeat_for `network-engine#190 <https://github.com/ansible-network/network-engine/pull/190>`_.
+
+- Add missing boilerplate for net_facts module `network-engine#194 <https://github.com/ansible-network/network-engine/pull/194>`_.
+
+
+.. _Ansible Network network-engine_v2.6.6:
+
+v2.6.6
+======
+
+.. _Ansible Network network-engine_v2.6.6_Minor Changes:
+
+Minor Changes
+-------------
+
+- Capability to filter AnsibleModule kwargs `network-engine#149 <https://github.com/ansible-network/network-engine/pull/149>`_.
+
+
+.. _Ansible Network network-engine_v2.6.6_Removed Features (previously deprecated):
+
+Removed Features (previously deprecated)
+----------------------------------------
+
+- Remove deprecated module ``cli_get``
+
+
+.. _Ansible Network network-engine_v2.6.5:
+
+v2.6.5
+======
+
+.. _Ansible Network network-engine_v2.6.5_Bugfixes:
+
+Bugfixes
+--------
+
+- Remove GenericLinux from supported platforms `network-engine#145 <https://github.com/ansible-network/network-engine/pull/145>`_.
+
+
 .. _Ansible Network network-engine_v2.6.4:
 
 v2.6.4
@@ -106,14 +165,6 @@ Documentation Updates
 - The argument to end a block of text when searching with match_greedy was missing `network-engine#116 <https://github.com/ansible-network/network-engine/pull/116>`_.
 
 
-.. _Ansible Network network-engine_v2.6.1_Bugfixes:
-
-Bugfixes
---------
-
-- Fixes bug when loading a dir of parsers `network-engine#113 <https://github.com/ansible-network/network-engine/pull/113>`_.
-
-
 .. _Ansible Network network-engine_v2.6.0:
 
 v2.6.0
@@ -150,6 +201,8 @@ Bugfixes
 - Fix cli task parser undefined issue when only command is used `network-engine#103 <https://github.com/ansible-network/network-engine/pull/103>`_.
 
 - Fix an issue with using the extend directive with a loop `network-engine#105 <https://github.com/ansible-network/network-engine/pull/105>`_.
+
+- Fixes bug when loading a dir of parsers `network-engine#113 <https://github.com/ansible-network/network-engine/pull/113>`_.
 
 
 .. _Ansible Network network-engine_v2.5.3:
