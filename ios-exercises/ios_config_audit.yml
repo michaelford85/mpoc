@@ -6,7 +6,7 @@
 
   tasks:
 
-  - name: configure the “management” vrf
+  - name: Include Caretaker Role
     include_role:
       name: caretaker
 
