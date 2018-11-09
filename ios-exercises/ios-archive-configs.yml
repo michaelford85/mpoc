@@ -56,12 +56,13 @@
       git_config:
         name: remote.origin.url
         scope: global
-        value: https://github.com/michaelford85/ios-config-archives.git
+        value: 'https://github.com/michaelford85/ios-config-archives.git'
       run_once: yes
       delegate_to: localhost
 
     - name: Push configurations to github
       shell: |
+        sudo -i
         cd {{ playbook_dir }}/ios-config-archives
         git add .
         git commit -m "configuration archive {{ cur_date }}"
