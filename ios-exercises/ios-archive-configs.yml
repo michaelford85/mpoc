@@ -34,17 +34,38 @@
       delegate_to: localhost
       run_once: yes
 
+    - name: print playbook_dir
+      debug:
+        msg: "{{ playbook_dir }}"
+
+    - name: set git username
+      git_config:
+        name: user.email
+        scope: global
+        value: "{{ git_username }}"
+
+    - name: set git password
+      git_config:
+        name: user.password
+        scope: global
+        value: "{{ git_password }}"
+      run_once: yes
+      delegate_to: localhost
+
+    - name: set git origin
+      git_config:
+        name: remote.origin.url
+        scope: global
+        value: https://github.com/michaelford85/ios-config-archives.git
+      run_once: yes
+      delegate_to: localhost
+
     - name: Push configurations to github
       shell: |
         cd {{ playbook_dir }}/ios-config-archives
-        git config user.email \""{{git_username}}"\"
-        git config user.password \""{{git_password}}"\"
-        git remote set-url origin https://github.com/michaelford85/ios-config-archives.git
         git add .
         git commit -m "configuration archive {{ cur_date }}"
         git push
-        git config --unset user.email
-        git config --unset user.password
       run_once: yes
       delegate_to: localhost
 
