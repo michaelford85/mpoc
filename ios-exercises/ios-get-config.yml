@@ -12,7 +12,7 @@
 
     - name: Ensure that running_config directory exists
       file:
-        path: {{ playbook_dir }}/running_config
+        path: "{{ playbook_dir }}/running_config"
         state: directory
         mode: 0777
       run_once: yes
