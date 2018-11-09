@@ -12338,3 +12338,189 @@ The offending line appears to be:
 2018-11-09 12:45:30,385 p=11077 u=mford |  rtr4                       : ok=1    changed=1    unreachable=0    failed=0   
 2018-11-09 12:46:04,409 p=11287 u=mford |  ERROR! Missing required action
 2018-11-09 12:46:59,007 p=11303 u=mford |  Encryption successful
+2018-11-09 12:59:18,325 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-09 12:59:18,334 p=11430 u=mford |  PLAY [Store running_config to control node] ********************************************************************************************************************************************
+2018-11-09 12:59:18,346 p=11430 u=mford |  TASK [get active configuration from device] ********************************************************************************************************************************************
+2018-11-09 12:59:18,528 p=11430 u=mford |  TASK [ansible-network.config_manager : validate role spec] *****************************************************************************************************************************
+2018-11-09 12:59:20,908 p=11447 u=mford |  network_os is set to ios
+2018-11-09 12:59:20,910 p=11445 u=mford |  network_os is set to ios
+2018-11-09 12:59:20,912 p=11444 u=mford |  network_os is set to ios
+2018-11-09 12:59:20,913 p=11446 u=mford |  network_os is set to ios
+2018-11-09 12:59:21,090 p=11468 u=mford | paramiko [52.23.224.81] starting thread (client mode): 0x1876f50L
+2018-11-09 12:59:21,090 p=11468 u=mford | paramiko [52.23.224.81] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-09 12:59:21,129 p=11468 u=mford | paramiko [52.23.224.81] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-09 12:59:21,129 p=11468 u=mford | paramiko [52.23.224.81] Connected (version 2.0, client Cisco-1.25)
+2018-11-09 12:59:21,135 p=11468 u=mford | paramiko [52.23.224.81] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-09 12:59:21,136 p=11468 u=mford | paramiko [52.23.224.81] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-09 12:59:21,136 p=11468 u=mford | paramiko [52.23.224.81] HostKey agreed: ssh-rsa
+2018-11-09 12:59:21,137 p=11468 u=mford | paramiko [52.23.224.81] Cipher agreed: aes128-ctr
+2018-11-09 12:59:21,137 p=11468 u=mford | paramiko [52.23.224.81] MAC agreed: hmac-sha2-256
+2018-11-09 12:59:21,137 p=11468 u=mford | paramiko [52.23.224.81] Compression agreed: none
+2018-11-09 12:59:21,408 p=11468 u=mford | paramiko [52.23.224.81] Got server p (2048 bits)
+2018-11-09 12:59:21,549 p=11468 u=mford | paramiko [52.23.224.81] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-09 12:59:21,551 p=11468 u=mford | paramiko [52.23.224.81] Switch to new keys ...
+2018-11-09 12:59:21,560 p=11468 u=mford | paramiko [52.23.224.81] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-09 12:59:21,652 p=11474 u=mford | paramiko [54.144.217.74] starting thread (client mode): 0x22eef50L
+2018-11-09 12:59:21,652 p=11474 u=mford | paramiko [54.144.217.74] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-09 12:59:21,656 p=11472 u=mford | paramiko [54.175.155.7] starting thread (client mode): 0x110bdf50L
+2018-11-09 12:59:21,657 p=11472 u=mford | paramiko [54.175.155.7] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-09 12:59:21,657 p=11475 u=mford | paramiko [34.201.120.82] starting thread (client mode): 0x1869f50L
+2018-11-09 12:59:21,658 p=11475 u=mford | paramiko [34.201.120.82] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-09 12:59:21,700 p=11474 u=mford | paramiko [54.144.217.74] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-09 12:59:21,701 p=11474 u=mford | paramiko [54.144.217.74] Connected (version 2.0, client Cisco-1.25)
+2018-11-09 12:59:21,703 p=11472 u=mford | paramiko [54.175.155.7] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-09 12:59:21,704 p=11472 u=mford | paramiko [54.175.155.7] Connected (version 2.0, client Cisco-1.25)
+2018-11-09 12:59:21,707 p=11475 u=mford | paramiko [34.201.120.82] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-09 12:59:21,708 p=11475 u=mford | paramiko [34.201.120.82] Connected (version 2.0, client Cisco-1.25)
+2018-11-09 12:59:21,744 p=11474 u=mford | paramiko [54.144.217.74] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-09 12:59:21,745 p=11474 u=mford | paramiko [54.144.217.74] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-09 12:59:21,745 p=11474 u=mford | paramiko [54.144.217.74] HostKey agreed: ssh-rsa
+2018-11-09 12:59:21,746 p=11474 u=mford | paramiko [54.144.217.74] Cipher agreed: aes128-ctr
+2018-11-09 12:59:21,746 p=11474 u=mford | paramiko [54.144.217.74] MAC agreed: hmac-sha2-256
+2018-11-09 12:59:21,747 p=11474 u=mford | paramiko [54.144.217.74] Compression agreed: none
+2018-11-09 12:59:21,748 p=11472 u=mford | paramiko [54.175.155.7] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-09 12:59:21,748 p=11472 u=mford | paramiko [54.175.155.7] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-09 12:59:21,749 p=11472 u=mford | paramiko [54.175.155.7] HostKey agreed: ssh-rsa
+2018-11-09 12:59:21,749 p=11472 u=mford | paramiko [54.175.155.7] Cipher agreed: aes128-ctr
+2018-11-09 12:59:21,749 p=11472 u=mford | paramiko [54.175.155.7] MAC agreed: hmac-sha2-256
+2018-11-09 12:59:21,750 p=11472 u=mford | paramiko [54.175.155.7] Compression agreed: none
+2018-11-09 12:59:21,754 p=11475 u=mford | paramiko [34.201.120.82] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-09 12:59:21,754 p=11475 u=mford | paramiko [34.201.120.82] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-09 12:59:21,754 p=11475 u=mford | paramiko [34.201.120.82] HostKey agreed: ssh-rsa
+2018-11-09 12:59:21,755 p=11475 u=mford | paramiko [34.201.120.82] Cipher agreed: aes128-ctr
+2018-11-09 12:59:21,755 p=11475 u=mford | paramiko [34.201.120.82] MAC agreed: hmac-sha2-256
+2018-11-09 12:59:21,756 p=11475 u=mford | paramiko [34.201.120.82] Compression agreed: none
+2018-11-09 12:59:21,789 p=11472 u=mford | paramiko [54.175.155.7] Got server p (2048 bits)
+2018-11-09 12:59:21,796 p=11475 u=mford | paramiko [34.201.120.82] Got server p (2048 bits)
+2018-11-09 12:59:21,831 p=11468 u=mford | paramiko [52.23.224.81] userauth is OK
+2018-11-09 12:59:21,874 p=11468 u=mford | paramiko [52.23.224.81] Authentication (publickey) successful!
+2018-11-09 12:59:21,878 p=11468 u=mford | paramiko [52.23.224.81] [chan 0] Max packet in: 32768 bytes
+2018-11-09 12:59:21,910 p=11472 u=mford | paramiko [54.175.155.7] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-09 12:59:21,912 p=11472 u=mford | paramiko [54.175.155.7] Switch to new keys ...
+2018-11-09 12:59:21,917 p=11468 u=mford | paramiko [52.23.224.81] [chan 0] Max packet out: 4096 bytes
+2018-11-09 12:59:21,918 p=11468 u=mford | paramiko [52.23.224.81] Secsh channel 0 opened.
+2018-11-09 12:59:21,925 p=11475 u=mford | paramiko [34.201.120.82] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-09 12:59:21,926 p=11475 u=mford | paramiko [34.201.120.82] Switch to new keys ...
+2018-11-09 12:59:21,942 p=11472 u=mford | paramiko [54.175.155.7] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-09 12:59:21,956 p=11475 u=mford | paramiko [34.201.120.82] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-09 12:59:21,985 p=11474 u=mford | paramiko [54.144.217.74] Got server p (2048 bits)
+2018-11-09 12:59:22,070 p=11468 u=mford | paramiko [52.23.224.81] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,111 p=11474 u=mford | paramiko [54.144.217.74] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-09 12:59:22,113 p=11474 u=mford | paramiko [54.144.217.74] Switch to new keys ...
+2018-11-09 12:59:22,144 p=11474 u=mford | paramiko [54.144.217.74] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-09 12:59:22,184 p=11472 u=mford | paramiko [54.175.155.7] userauth is OK
+2018-11-09 12:59:22,200 p=11475 u=mford | paramiko [34.201.120.82] userauth is OK
+2018-11-09 12:59:22,224 p=11472 u=mford | paramiko [54.175.155.7] Authentication (publickey) successful!
+2018-11-09 12:59:22,242 p=11475 u=mford | paramiko [34.201.120.82] Authentication (publickey) successful!
+2018-11-09 12:59:22,246 p=11472 u=mford | paramiko [54.175.155.7] [chan 0] Max packet in: 32768 bytes
+2018-11-09 12:59:22,263 p=11475 u=mford | paramiko [34.201.120.82] [chan 0] Max packet in: 32768 bytes
+2018-11-09 12:59:22,274 p=11468 u=mford | paramiko [52.23.224.81] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,282 p=11472 u=mford | paramiko [54.175.155.7] [chan 0] Max packet out: 4096 bytes
+2018-11-09 12:59:22,283 p=11472 u=mford | paramiko [54.175.155.7] Secsh channel 0 opened.
+2018-11-09 12:59:22,300 p=11475 u=mford | paramiko [34.201.120.82] [chan 0] Max packet out: 4096 bytes
+2018-11-09 12:59:22,301 p=11475 u=mford | paramiko [34.201.120.82] Secsh channel 0 opened.
+2018-11-09 12:59:22,347 p=11472 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,367 p=11475 u=mford | paramiko [34.201.120.82] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,386 p=11472 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,387 p=11474 u=mford | paramiko [54.144.217.74] userauth is OK
+2018-11-09 12:59:22,403 p=11475 u=mford | paramiko [34.201.120.82] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,430 p=11474 u=mford | paramiko [54.144.217.74] Authentication (publickey) successful!
+2018-11-09 12:59:22,447 p=11474 u=mford | paramiko [54.144.217.74] [chan 0] Max packet in: 32768 bytes
+2018-11-09 12:59:22,484 p=11474 u=mford | paramiko [54.144.217.74] [chan 0] Max packet out: 4096 bytes
+2018-11-09 12:59:22,485 p=11474 u=mford | paramiko [54.144.217.74] Secsh channel 0 opened.
+2018-11-09 12:59:22,553 p=11474 u=mford | paramiko [54.144.217.74] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:22,594 p=11474 u=mford | paramiko [54.144.217.74] [chan 0] Sesch channel 0 request ok
+2018-11-09 12:59:23,308 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:23,319 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:23,482 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:23,789 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:23,798 p=11430 u=mford |  TASK [invoke network provider] *********************************************************************************************************************************************************
+2018-11-09 12:59:23,994 p=11430 u=mford |  TASK [ansible-network.cisco_ios : initialize function] *********************************************************************************************************************************
+2018-11-09 12:59:24,104 p=11430 u=mford |  included: /Users/mford/Documents/github-workspace/mpoc/ios-exercises/roles/ansible-network.cisco_ios/includes/init.yaml for rtr1, rtr2, rtr3, rtr4
+2018-11-09 12:59:24,120 p=11430 u=mford |  TASK [ansible-network.cisco_ios : set role basic facts] ********************************************************************************************************************************
+2018-11-09 12:59:26,088 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:26,090 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:26,091 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:26,092 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:26,102 p=11430 u=mford |  TASK [ansible-network.cisco_ios : display the role version to stdout] ******************************************************************************************************************
+2018-11-09 12:59:27,935 p=11430 u=mford |  ok: [rtr1] => {
+    "msg": "ansible_network.cisco_ios version is v2.6.2"
+}
+2018-11-09 12:59:28,581 p=11430 u=mford |  ok: [rtr2] => {
+    "msg": "ansible_network.cisco_ios version is v2.6.2"
+}
+2018-11-09 12:59:28,582 p=11430 u=mford |  ok: [rtr3] => {
+    "msg": "ansible_network.cisco_ios version is v2.6.2"
+}
+2018-11-09 12:59:28,582 p=11430 u=mford |  ok: [rtr4] => {
+    "msg": "ansible_network.cisco_ios version is v2.6.2"
+}
+2018-11-09 12:59:28,601 p=11430 u=mford |  TASK [ansible-network.cisco_ios : validate ansible_network_os == 'ios'] ****************************************************************************************************************
+2018-11-09 12:59:28,637 p=11430 u=mford |  skipping: [rtr1]
+2018-11-09 12:59:28,654 p=11430 u=mford |  skipping: [rtr2]
+2018-11-09 12:59:28,657 p=11430 u=mford |  skipping: [rtr3]
+2018-11-09 12:59:28,672 p=11430 u=mford |  skipping: [rtr4]
+2018-11-09 12:59:28,683 p=11430 u=mford |  TASK [ansible-network.cisco_ios : validate ansible_connection == 'network_cli'] ********************************************************************************************************
+2018-11-09 12:59:28,714 p=11430 u=mford |  skipping: [rtr1]
+2018-11-09 12:59:28,731 p=11430 u=mford |  skipping: [rtr2]
+2018-11-09 12:59:28,733 p=11430 u=mford |  skipping: [rtr3]
+2018-11-09 12:59:28,751 p=11430 u=mford |  skipping: [rtr4]
+2018-11-09 12:59:28,773 p=11430 u=mford |  TASK [ansible-network.cisco_ios : Validate we have required installed version of dependent roles] **************************************************************************************
+2018-11-09 12:59:30,645 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:30,650 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:30,653 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:30,659 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:30,668 p=11430 u=mford |  TASK [ansible-network.cisco_ios : Validate we have required installed version of dependent roles from meta] ****************************************************************************
+2018-11-09 12:59:30,701 p=11430 u=mford |  skipping: [rtr1]
+2018-11-09 12:59:30,716 p=11430 u=mford |  skipping: [rtr2]
+2018-11-09 12:59:30,719 p=11430 u=mford |  skipping: [rtr3]
+2018-11-09 12:59:30,737 p=11430 u=mford |  skipping: [rtr4]
+2018-11-09 12:59:30,756 p=11430 u=mford |  TASK [ansible-network.cisco_ios : run command and return configuration] ****************************************************************************************************************
+2018-11-09 12:59:32,757 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:32,782 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:32,782 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:32,817 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:32,825 p=11430 u=mford |  TASK [ansible-network.cisco_ios : set the configuration fact] **************************************************************************************************************************
+2018-11-09 12:59:34,634 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:34,636 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:34,639 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:34,639 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:34,658 p=11430 u=mford |  TASK [ansible-network.cisco_ios : parse system configuration] **************************************************************************************************************************
+2018-11-09 12:59:36,617 p=11430 u=mford |  ok: [rtr1]
+2018-11-09 12:59:36,618 p=11430 u=mford |  ok: [rtr2]
+2018-11-09 12:59:36,618 p=11430 u=mford |  ok: [rtr3]
+2018-11-09 12:59:36,619 p=11430 u=mford |  ok: [rtr4]
+2018-11-09 12:59:36,626 p=11430 u=mford |  TASK [Ensure that running_config directory exists] *************************************************************************************************************************************
+2018-11-09 12:59:38,623 p=11430 u=mford |  changed: [rtr1]
+2018-11-09 12:59:38,633 p=11430 u=mford |  TASK [copy running config to control node] *********************************************************************************************************************************************
+2018-11-09 12:59:41,397 p=11430 u=mford |  changed: [rtr2]
+2018-11-09 12:59:41,400 p=11430 u=mford |  changed: [rtr4]
+2018-11-09 12:59:41,401 p=11430 u=mford |  changed: [rtr3]
+2018-11-09 12:59:41,403 p=11430 u=mford |  changed: [rtr1]
+2018-11-09 12:59:41,411 p=11430 u=mford |  TASK [Remove non-config lines] *********************************************************************************************************************************************************
+2018-11-09 12:59:44,041 p=11430 u=mford |  changed: [rtr3]
+2018-11-09 12:59:44,045 p=11430 u=mford |  changed: [rtr4]
+2018-11-09 12:59:44,046 p=11430 u=mford |  changed: [rtr2]
+2018-11-09 12:59:44,056 p=11430 u=mford |  changed: [rtr1]
+2018-11-09 12:59:44,066 p=11430 u=mford |  TASK [Remove non-config lines - Regular Expression] ************************************************************************************************************************************
+2018-11-09 12:59:46,820 p=11430 u=mford |  changed: [rtr4]
+2018-11-09 12:59:46,823 p=11430 u=mford |  changed: [rtr1]
+2018-11-09 12:59:46,825 p=11430 u=mford |  changed: [rtr2]
+2018-11-09 12:59:46,827 p=11430 u=mford |  changed: [rtr3]
+2018-11-09 12:59:46,834 p=11472 u=mford | paramiko [54.175.155.7] [chan 0] EOF sent (0)
+2018-11-09 12:59:46,913 p=11472 u=mford | paramiko [54.175.155.7] EOF in transport thread
+2018-11-09 12:59:46,950 p=11474 u=mford | paramiko [54.144.217.74] [chan 0] EOF sent (0)
+2018-11-09 12:59:47,010 p=11474 u=mford | paramiko [54.144.217.74] EOF in transport thread
+2018-11-09 12:59:47,015 p=11475 u=mford | paramiko [34.201.120.82] [chan 0] EOF sent (0)
+2018-11-09 12:59:47,051 p=11444 u=mford |  shutdown complete
+2018-11-09 12:59:47,114 p=11475 u=mford | paramiko [34.201.120.82] EOF in transport thread
+2018-11-09 12:59:47,116 p=11445 u=mford |  shutdown complete
+2018-11-09 12:59:47,133 p=11468 u=mford | paramiko [52.23.224.81] [chan 0] EOF sent (0)
+2018-11-09 12:59:47,169 p=11468 u=mford | paramiko [52.23.224.81] EOF in transport thread
+2018-11-09 12:59:47,200 p=11430 u=mford |  PLAY RECAP *****************************************************************************************************************************************************************************
+2018-11-09 12:59:47,200 p=11430 u=mford |  rtr1                       : ok=12   changed=4    unreachable=0    failed=0   
+2018-11-09 12:59:47,200 p=11430 u=mford |  rtr2                       : ok=11   changed=3    unreachable=0    failed=0   
+2018-11-09 12:59:47,201 p=11430 u=mford |  rtr3                       : ok=11   changed=3    unreachable=0    failed=0   
+2018-11-09 12:59:47,201 p=11430 u=mford |  rtr4                       : ok=11   changed=3    unreachable=0    failed=0   
+2018-11-09 12:59:47,233 p=11446 u=mford |  shutdown complete
+2018-11-09 12:59:47,300 p=11447 u=mford |  shutdown complete
