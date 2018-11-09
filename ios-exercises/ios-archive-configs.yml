@@ -1,0 +1,54 @@
+---
+- name: Back up configs to github
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: clone configuration archives to ansible control
+      git:
+        repo: 'https://github.com/michaelford85/ios-config-archives.git'
+        dest: ./ios-config-archives
+        clone: yes
+        force: yes
+      run_once: yes
+      delegate_to: localhost
+
+    - name: copy running configs to ios-config-archives
+      command: cp -f ./running_config/{{inventory_hostname}}.cfg ./ios-config-archives
+      delegate_to: localhost
+
+    - name: retrieve timestamp
+      shell: "date +%Y-%m-%d%H-%M-%S.%5N"
+      register: tstamp_ns
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Set variables
+      set_fact:
+        cur_date: "{{ tstamp_ns.stdout[0:10]}}"
+        cur_time: "{{ tstamp_ns.stdout[10:]}}"
+        cur_time_ns: "{{ tstamp_ns.stdout[10:]}}"
+      delegate_to: localhost
+      run_once: yes
+
+    - name: Push configurations to github
+      shell: |
+        cd ./ios-config-archives
+        git config user.email "{{git_username}}"
+        git config user.password "{{git_password}}"
+        git remote set-url origin https://github.com/michaelford85/ios-config-archives.git
+        git add .
+        git commit -m "configuration archive {{ cur_date }}"
+        git push
+        git config --unset user.email
+        git config --unset user.password
+      run_once: yes
+      delegate_to: localhost
+
+    - name: ensure ios-config-archives directory is absent
+      file:
+        path: ./ios-config-archives
+        state: absent
+      delegate_to: localhost
+      run_once: yes
