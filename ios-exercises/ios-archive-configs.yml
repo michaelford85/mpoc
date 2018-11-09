@@ -36,7 +36,6 @@
 
     - name: Push configurations to github
       shell: |
-        sudo -i
         cd {{ playbook_dir }}/ios-config-archives
         git config user.email "{{git_username}}"
         git config user.password "{{git_password}}"
