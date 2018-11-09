@@ -4,7 +4,7 @@
   connection: network_cli
   gather_facts: no
   vars_files:
-    - '"{{ playbook_dir }}"/default_vars.yml'
+    - default_vars.yml
 
   tasks:
     - name: clone configuration archives to ansible control
