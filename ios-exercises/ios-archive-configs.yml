@@ -37,8 +37,8 @@
     - name: Push configurations to github
       shell: |
         cd {{ playbook_dir }}/ios-config-archives
-        git config user.email "{{git_username}}"
-        git config user.password "{{git_password}}"
+        git config user.email \""{{git_username}}"\"
+        git config user.password \""{{git_password}}"\"
         git remote set-url origin https://github.com/michaelford85/ios-config-archives.git
         git add .
         git commit -m "configuration archive {{ cur_date }}"
