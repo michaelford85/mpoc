@@ -44,6 +44,12 @@
         scope: global
         value: "{{ git_username }}"
 
+    - name: set git name
+      git_config:
+        name: user.name
+        scope: global
+        value: "{{ git_name }}"
+
     - name: set git password
       git_config:
         name: user.password
@@ -62,13 +68,13 @@
 
     - name: Push configurations to github
       shell: |
-        sudo -i
         cd {{ playbook_dir }}/ios-config-archives
         git add .
-        git commit -m "configuration archive {{ cur_date }}"
-        git push
+        git commit -m "Test configuration archive {{ cur_date }}"
+        git push origin --force
       run_once: yes
       delegate_to: localhost
+
 
     - name: ensure ios-config-archives directory is absent
       file:
@@ -76,3 +82,11 @@
         state: absent
       delegate_to: localhost
       run_once: yes
+
+    - name: Push configurations to github
+      shell: |
+        git config --global --unset user.name
+        git config --global --unset user.email
+        git config --global --unset user.password
+      run_once: yes
+      delegate_to: localhost
