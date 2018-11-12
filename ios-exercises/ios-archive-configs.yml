@@ -76,6 +76,12 @@
       run_once: yes
       delegate_to: localhost
 
+    - name: Check git origins
+      shell: |
+        git remote -v
+      run_once: yes
+      delegate_to: localhost
+
 
     - name: Push configurations to github
       shell: |
