@@ -43,12 +43,18 @@
         name: user.email
         scope: global
         value: "{{ git_username }}"
+      run_once: yes
+      delegate_to: localhost
+      become: yes
 
     - name: set git name
       git_config:
         name: user.name
         scope: global
         value: "{{ git_name }}"
+      run_once: yes
+      delegate_to: localhost
+      become: yes
 
     - name: set git password
       git_config:
@@ -57,6 +63,7 @@
         value: "{{ git_password }}"
       run_once: yes
       delegate_to: localhost
+      become: yes
 
     - name: set git origin
       git_config:
@@ -65,6 +72,7 @@
         value: 'https://github.com/michaelford85/ios-config-archives.git'
       run_once: yes
       delegate_to: localhost
+      become: yes
 
     - name: Push configurations to github
       shell: |
@@ -74,6 +82,7 @@
         git push origin --force
       run_once: yes
       delegate_to: localhost
+      become: yes
 
 
     - name: ensure ios-config-archives directory is absent
