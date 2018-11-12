@@ -78,7 +78,6 @@
         git push origin --force
       run_once: yes
       delegate_to: localhost
-      become: yes
 
 
     - name: ensure ios-config-archives directory is absent
