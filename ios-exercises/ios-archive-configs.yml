@@ -55,3 +55,8 @@
         msg: "Operator: Manually push ios-config-archives to Github"
       delegate_to: localhost
       run_once: yes
+
+    - name: Push ios-config-archives to github
+      uri:
+        url: https://api.github.com/graphql
+        
