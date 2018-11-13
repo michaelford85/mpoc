@@ -9,7 +9,6 @@
       import_role:
         name: ansible-network.cisco_ios
         tasks_from: get_facts
-      vars:
-        subset:
-          - system
-          - interfaces
+      # vars:
+      #   subset:
+      #     - interfaces

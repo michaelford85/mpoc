@@ -8,21 +8,11 @@
 
   tasks:
 
-  - name: clone configuration archives to ansible control
-    git:
-      repo: "{{ git_repo_path}}"
-      dest: "{{ playbook_dir}}/ios-config-archives"
-      clone: yes
-      force: yes
-    run_once: yes
+  - name: Copy archived config to router and config replace
+    include_role:
+      name: ansible-network.config_manager
+      tasks_from: load
+    vars:
+      config_manager_scm_url: "{{ git_repo_path }}"
+      config_manager_replace: True
     delegate_to: localhost
-
-  - name: Copy archived config to router
-    net_put:
-      src: "{{playbook_dir}}/ios-config-archives/{{inventory_hostname}}.cfg"
-      dest: "flash:{{inventory_hostname}}.config"
-
-  - name: config replace
-    ios_command:
-      commands:
-        - "config replace flash:{{inventory_hostname}}.config force"
