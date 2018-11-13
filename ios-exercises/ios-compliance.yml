@@ -1,5 +1,5 @@
 ---
-- name: Check configuration compliance
+- name: Check configuration compliance between running config and archived config
   hosts: cisco
   connection: network_cli
   gather_facts: no
@@ -70,8 +70,8 @@
           - "{{ inventory_hostname }} differences:"
           - "{{ diff_output.stdout.split('\n') }}"
 
-    - name: Ensure diff is saved to config_diff directory
-      copy:
-        content: "{{ diff_output.stdout }}"
-        dest: "{{ playbook_dir }}/config_diff/{{ inventory_hostname}}_diff.txt"
-      delegate_to: localhost
+    # - name: Ensure diff is saved to config_diff directory
+    #   copy:
+    #     content: "{{ diff_output.stdout }}"
+    #     dest: "{{ playbook_dir }}/config_diff/{{ inventory_hostname}}_diff.txt"
+    #   delegate_to: localhost
