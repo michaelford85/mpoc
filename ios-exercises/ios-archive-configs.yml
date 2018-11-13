@@ -48,7 +48,6 @@
     - name: copy running configs to ios-config-archives
       command: "cp -f {{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg {{ playbook_dir }}/ios-config-archives"
       delegate_to: localhost
-      run_once: yes
 
     #TODO: replace with an API call to do a git push
     - name: Instruct Operator to back up to github
