@@ -50796,3 +50796,255 @@ This error can be suppressed as a warning using the "invalid_task_attribute_fail
 2018-11-16 08:54:39,263 p=15313 u=mford |  changed: [localhost]
 2018-11-16 08:54:39,266 p=15313 u=mford |  PLAY RECAP *************************************************************************************************************************************************************
 2018-11-16 08:54:39,266 p=15313 u=mford |  localhost                  : ok=3    changed=3    unreachable=0    failed=0   
+2018-11-16 12:33:25,955 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-16 12:33:25,964 p=17628 u=mford |  PLAY [Remove all configuration directories] ****************************************************************************************************************************
+2018-11-16 12:33:25,979 p=17628 u=mford |  TASK [Ensure running_config directory is absent] ***********************************************************************************************************************
+2018-11-16 12:33:27,535 p=17640 u=mford |  shutdown complete
+2018-11-16 12:33:27,616 p=17642 u=mford |  shutdown complete
+2018-11-16 12:33:27,704 p=17641 u=mford |  shutdown complete
+2018-11-16 12:33:27,812 p=17639 u=mford |  shutdown complete
+2018-11-16 12:33:28,090 p=17628 u=mford |  fatal: [rtr2]: FAILED! => {"msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"}
+2018-11-16 12:33:28,169 p=17628 u=mford |  fatal: [rtr4]: FAILED! => {"msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"}
+2018-11-16 12:33:28,259 p=17628 u=mford |  fatal: [rtr3]: FAILED! => {"msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"}
+2018-11-16 12:33:28,367 p=17628 u=mford |  fatal: [rtr1]: FAILED! => {"msg": "Unable to automatically determine host network os. Please manually configure ansible_network_os value for this host"}
+2018-11-16 12:33:28,372 p=17628 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/mpoc/ios-exercises/ios-clear-directories.retry
+
+2018-11-16 12:33:28,372 p=17628 u=mford |  PLAY RECAP *************************************************************************************************************************************************************
+2018-11-16 12:33:28,372 p=17628 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:33:28,373 p=17628 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:33:28,373 p=17628 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:33:28,373 p=17628 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:34:18,673 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-16 12:34:18,680 p=17682 u=mford |  PLAY [Remove all configuration directories] ****************************************************************************************************************************
+2018-11-16 12:34:18,693 p=17682 u=mford |  TASK [Ensure running_config directory is absent] ***********************************************************************************************************************
+2018-11-16 12:34:20,048 p=17693 u=mford |  network_os is set to ios
+2018-11-16 12:34:20,245 p=17714 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0xaab7f50L
+2018-11-16 12:34:20,246 p=17714 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:34:20,291 p=17714 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:34:20,292 p=17714 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:34:20,329 p=17714 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:34:20,330 p=17714 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:34:20,331 p=17714 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:34:20,331 p=17714 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:34:20,332 p=17714 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:34:20,333 p=17714 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:34:20,406 p=17714 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:34:20,408 p=17714 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:34:20,417 p=17714 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:34:20,517 p=17714 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:34:20,565 p=17714 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:34:20,585 p=17714 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:34:20,769 p=17714 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:34:20,770 p=17714 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:34:20,803 p=17714 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:34:20,804 p=17714 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:34:20,859 p=17714 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:20,908 p=17714 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:31,028 p=17695 u=mford |  network_os is set to ios
+2018-11-16 12:34:31,049 p=17693 u=mford |  shutdown complete
+2018-11-16 12:34:31,068 p=17714 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:34:31,160 p=17719 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x56aaf50L
+2018-11-16 12:34:31,161 p=17719 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:34:31,207 p=17719 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:34:31,208 p=17719 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:34:31,242 p=17719 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:34:31,243 p=17719 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:34:31,244 p=17719 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:34:31,245 p=17719 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:34:31,245 p=17719 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:34:31,246 p=17719 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:34:31,324 p=17719 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:34:31,326 p=17719 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:34:31,331 p=17719 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:34:31,440 p=17719 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:34:31,488 p=17719 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:34:31,497 p=17719 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:34:31,604 p=17682 u=mford |  fatal: [rtr2]: FAILED! => {"msg": ""}
+2018-11-16 12:34:31,658 p=17719 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:34:31,658 p=17719 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:34:31,692 p=17719 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:34:31,693 p=17719 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:34:31,740 p=17719 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:31,786 p=17719 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:41,890 p=17692 u=mford |  network_os is set to ios
+2018-11-16 12:34:41,912 p=17695 u=mford |  shutdown complete
+2018-11-16 12:34:41,969 p=17719 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:34:41,994 p=17724 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0xcdd5f50L
+2018-11-16 12:34:41,995 p=17724 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:34:42,045 p=17724 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:34:42,046 p=17724 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:34:42,089 p=17724 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:34:42,089 p=17724 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:34:42,089 p=17724 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:34:42,090 p=17724 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:34:42,090 p=17724 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:34:42,091 p=17724 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:34:42,170 p=17724 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:34:42,172 p=17724 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:34:42,198 p=17724 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:34:42,287 p=17724 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:34:42,337 p=17724 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:34:42,368 p=17724 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:34:42,461 p=17682 u=mford |  fatal: [rtr4]: FAILED! => {"msg": ""}
+2018-11-16 12:34:42,518 p=17724 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:34:42,518 p=17724 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:34:42,555 p=17724 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:34:42,555 p=17724 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:34:42,613 p=17724 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:42,662 p=17724 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:52,753 p=17694 u=mford |  network_os is set to ios
+2018-11-16 12:34:52,780 p=17692 u=mford |  shutdown complete
+2018-11-16 12:34:52,841 p=17724 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:34:52,855 p=17730 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x880bf50L
+2018-11-16 12:34:52,856 p=17730 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:34:52,904 p=17730 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:34:52,905 p=17730 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:34:52,939 p=17730 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:34:52,940 p=17730 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:34:52,940 p=17730 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:34:52,941 p=17730 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:34:52,941 p=17730 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:34:52,941 p=17730 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:34:53,015 p=17730 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:34:53,016 p=17730 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:34:53,025 p=17730 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:34:53,133 p=17730 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:34:53,182 p=17730 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:34:53,194 p=17730 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:34:53,201 p=17682 u=mford |   [ERROR]: User interrupted execution
+
+2018-11-16 12:34:53,358 p=17730 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:34:53,359 p=17730 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:34:53,401 p=17730 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:34:53,401 p=17730 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:34:53,444 p=17730 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:53,492 p=17730 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:34:57,592 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-16 12:34:57,601 p=17732 u=mford |  PLAY [Remove all configuration directories] ****************************************************************************************************************************
+2018-11-16 12:34:57,615 p=17732 u=mford |  TASK [Ensure running_config directory is absent] ***********************************************************************************************************************
+2018-11-16 12:34:57,797 p=17732 u=mford |  fatal: [rtr1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname webserver: nodename nor servname provided, or not known\r\n", "unreachable": true}
+2018-11-16 12:34:57,809 p=17732 u=mford |  fatal: [rtr2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname webserver: nodename nor servname provided, or not known\r\n", "unreachable": true}
+2018-11-16 12:34:57,833 p=17732 u=mford |  fatal: [rtr3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname webserver: nodename nor servname provided, or not known\r\n", "unreachable": true}
+2018-11-16 12:34:57,851 p=17732 u=mford |  fatal: [rtr4]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname webserver: nodename nor servname provided, or not known\r\n", "unreachable": true}
+2018-11-16 12:34:57,855 p=17732 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/mpoc/ios-exercises/ios-clear-directories.retry
+
+2018-11-16 12:34:57,856 p=17732 u=mford |  PLAY RECAP *************************************************************************************************************************************************************
+2018-11-16 12:34:57,856 p=17732 u=mford |  rtr1                       : ok=0    changed=0    unreachable=1    failed=0   
+2018-11-16 12:34:57,856 p=17732 u=mford |  rtr2                       : ok=0    changed=0    unreachable=1    failed=0   
+2018-11-16 12:34:57,856 p=17732 u=mford |  rtr3                       : ok=0    changed=0    unreachable=1    failed=0   
+2018-11-16 12:34:57,857 p=17732 u=mford |  rtr4                       : ok=0    changed=0    unreachable=1    failed=0   
+2018-11-16 12:35:03,519 p=17730 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:35:16,273 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-16 12:35:16,280 p=17752 u=mford |  PLAY [Remove all configuration directories] ****************************************************************************************************************************
+2018-11-16 12:35:16,293 p=17752 u=mford |  TASK [Ensure running_config directory is absent] ***********************************************************************************************************************
+2018-11-16 12:35:17,602 p=17762 u=mford |  network_os is set to ios
+2018-11-16 12:35:17,711 p=17784 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x9d6ff50L
+2018-11-16 12:35:17,712 p=17784 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:35:17,756 p=17784 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:35:17,757 p=17784 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:35:17,792 p=17784 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:35:17,793 p=17784 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:35:17,793 p=17784 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:35:17,794 p=17784 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:35:17,794 p=17784 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:35:17,794 p=17784 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:35:17,865 p=17784 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:35:17,866 p=17784 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:35:17,881 p=17784 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:35:17,975 p=17784 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:35:18,027 p=17784 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:35:18,048 p=17784 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:35:18,207 p=17784 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:35:18,208 p=17784 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:35:18,241 p=17784 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:35:18,241 p=17784 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:35:18,291 p=17784 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:18,339 p=17784 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:28,440 p=17765 u=mford |  network_os is set to ios
+2018-11-16 12:35:28,458 p=17762 u=mford |  shutdown complete
+2018-11-16 12:35:28,530 p=17784 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:35:28,546 p=17788 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x2e2cf50L
+2018-11-16 12:35:28,546 p=17788 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:35:28,595 p=17788 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:35:28,596 p=17788 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:35:28,631 p=17788 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:35:28,632 p=17788 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:35:28,632 p=17788 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:35:28,632 p=17788 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:35:28,632 p=17788 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:35:28,633 p=17788 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:35:28,703 p=17788 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:35:28,705 p=17788 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:35:28,715 p=17788 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:35:28,814 p=17788 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:35:28,862 p=17788 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:35:28,885 p=17788 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:35:29,009 p=17752 u=mford |  fatal: [rtr1]: FAILED! => {"msg": ""}
+2018-11-16 12:35:29,042 p=17788 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:35:29,042 p=17788 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:35:29,076 p=17788 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:35:29,076 p=17788 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:35:29,126 p=17788 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:29,173 p=17788 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:39,268 p=17763 u=mford |  network_os is set to ios
+2018-11-16 12:35:39,293 p=17765 u=mford |  shutdown complete
+2018-11-16 12:35:39,340 p=17788 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:35:39,368 p=17795 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x7101f50L
+2018-11-16 12:35:39,369 p=17795 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:35:39,412 p=17795 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:35:39,413 p=17795 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:35:39,445 p=17795 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:35:39,445 p=17795 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:35:39,446 p=17795 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:35:39,446 p=17795 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:35:39,446 p=17795 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:35:39,447 p=17795 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:35:39,521 p=17795 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:35:39,522 p=17795 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:35:39,537 p=17795 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:35:39,636 p=17795 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:35:39,683 p=17795 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:35:39,705 p=17795 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:35:39,842 p=17752 u=mford |  fatal: [rtr4]: FAILED! => {"msg": ""}
+2018-11-16 12:35:39,856 p=17795 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:35:39,857 p=17795 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:35:39,894 p=17795 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:35:39,894 p=17795 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:35:39,945 p=17795 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:39,992 p=17795 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:50,091 p=17764 u=mford |  network_os is set to ios
+2018-11-16 12:35:50,109 p=17763 u=mford |  shutdown complete
+2018-11-16 12:35:50,199 p=17795 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:35:50,218 p=17804 u=mford | paramiko [18.234.61.158] starting thread (client mode): 0x7354f50L
+2018-11-16 12:35:50,219 p=17804 u=mford | paramiko [18.234.61.158] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-16 12:35:50,265 p=17804 u=mford | paramiko [18.234.61.158] Remote version/idstring: SSH-2.0-OpenSSH_7.4
+2018-11-16 12:35:50,266 p=17804 u=mford | paramiko [18.234.61.158] Connected (version 2.0, client OpenSSH_7.4)
+2018-11-16 12:35:50,299 p=17804 u=mford | paramiko [18.234.61.158] kex algos:[u'curve25519-sha256', u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group16-sha512', u'diffie-hellman-group18-sha512', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha256', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'rsa-sha2-512', u'rsa-sha2-256', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] server encrypt:[u'chacha20-poly1305@openssh.com', u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'aes128-cbc', u'aes192-cbc', u'aes256-cbc', u'blowfish-cbc', u'cast128-cbc', u'3des-cbc'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-16 12:35:50,300 p=17804 u=mford | paramiko [18.234.61.158] Kex agreed: ecdh-sha2-nistp256
+2018-11-16 12:35:50,300 p=17804 u=mford | paramiko [18.234.61.158] HostKey agreed: ssh-ed25519
+2018-11-16 12:35:50,301 p=17804 u=mford | paramiko [18.234.61.158] Cipher agreed: aes128-ctr
+2018-11-16 12:35:50,301 p=17804 u=mford | paramiko [18.234.61.158] MAC agreed: hmac-sha2-256
+2018-11-16 12:35:50,301 p=17804 u=mford | paramiko [18.234.61.158] Compression agreed: none
+2018-11-16 12:35:50,381 p=17804 u=mford | paramiko [18.234.61.158] kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2018-11-16 12:35:50,383 p=17804 u=mford | paramiko [18.234.61.158] Switch to new keys ...
+2018-11-16 12:35:50,387 p=17804 u=mford | paramiko [18.234.61.158] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-16 12:35:50,494 p=17804 u=mford | paramiko [18.234.61.158] userauth is OK
+2018-11-16 12:35:50,541 p=17804 u=mford | paramiko [18.234.61.158] Authentication (publickey) successful!
+2018-11-16 12:35:50,556 p=17804 u=mford | paramiko [18.234.61.158] [chan 0] Max packet in: 32768 bytes
+2018-11-16 12:35:50,661 p=17752 u=mford |  fatal: [rtr2]: FAILED! => {"msg": ""}
+2018-11-16 12:35:50,719 p=17804 u=mford | paramiko [18.234.61.158] Received global request "hostkeys-00@openssh.com"
+2018-11-16 12:35:50,719 p=17804 u=mford | paramiko [18.234.61.158] Rejecting "hostkeys-00@openssh.com" global request from server.
+2018-11-16 12:35:50,753 p=17804 u=mford | paramiko [18.234.61.158] [chan 0] Max packet out: 32768 bytes
+2018-11-16 12:35:50,754 p=17804 u=mford | paramiko [18.234.61.158] Secsh channel 0 opened.
+2018-11-16 12:35:50,802 p=17804 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:35:50,851 p=17804 u=mford | paramiko [18.234.61.158] [chan 0] Sesch channel 0 request ok
+2018-11-16 12:36:00,974 p=17764 u=mford |  shutdown complete
+2018-11-16 12:36:01,036 p=17804 u=mford | paramiko [18.234.61.158] EOF in transport thread
+2018-11-16 12:36:01,524 p=17752 u=mford |  fatal: [rtr3]: FAILED! => {"msg": ""}
+2018-11-16 12:36:01,528 p=17752 u=mford |  	to retry, use: --limit @/Users/mford/Documents/github-workspace/mpoc/ios-exercises/ios-clear-directories.retry
+
+2018-11-16 12:36:01,529 p=17752 u=mford |  PLAY RECAP *************************************************************************************************************************************************************
+2018-11-16 12:36:01,530 p=17752 u=mford |  rtr1                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:36:01,530 p=17752 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:36:01,530 p=17752 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-16 12:36:01,530 p=17752 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   

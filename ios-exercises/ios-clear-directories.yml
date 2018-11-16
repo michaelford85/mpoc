@@ -3,20 +3,22 @@
   hosts: localhost
   connection: local
   gather_facts: no
-  
+
 
   tasks:
     - name: Ensure running_config directory is absent
       file:
-        path: /tmp/running_config
+        path: "{{playbook_dir}}/running_config"
         state: absent
+
 
     - name: Ensure ios-config-archives directory is absent
       file:
-        path: /tmp/ios-config-archives
+        path: "{{playbook_dir}}/ios-config-archives"
         state: absent
 
     - name: Ensure config_diff directory is absent
       file:
-        path: /tmp/config_diff
+        path: "{{playbook_dir}}/config_diff"
         state: absent
+      
