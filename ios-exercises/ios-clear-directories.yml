@@ -4,6 +4,7 @@
   connection: local
   gather_facts: no
   become: yes
+  become_user: root
 
   tasks:
     - name: Ensure running_config directory is absent
