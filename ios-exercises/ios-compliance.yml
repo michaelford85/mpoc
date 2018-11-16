@@ -59,7 +59,7 @@
       delegate_to: localhost
 
     - name: Diff running config with archived config
-      command: "diff {{ playbook_dir }}/running_config/{{inventory_hostname}}.cfg {{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}.cfg"
+      command: "diff {{ playbook_dir }}/running_config/{{inventory_hostname}}_master.cfg {{ playbook_dir }}/ios-config-archives/{{inventory_hostname}}.cfg"
       register: diff_output
       delegate_to: localhost
       failed_when: diff_output.rc < 0
