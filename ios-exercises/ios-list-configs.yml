@@ -13,6 +13,7 @@
         state: absent
       run_once: yes
       delegate_to: localhost
+      become: yes
 
     - name: clone configuration archives to ansible control
       git:
