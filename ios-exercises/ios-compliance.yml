@@ -52,7 +52,7 @@
     - name: clone configuration archives to ansible control
       git:
         repo: "{{ git_repo_path }}"
-        dest: "{{ playbook_dir }}/ios-config-archives"
+        dest: "{{ playbook_dir }}/ios-config-archives/"
         clone: yes
         force: yes
       run_once: yes
