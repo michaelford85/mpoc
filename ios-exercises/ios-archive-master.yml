@@ -46,7 +46,7 @@
       delegate_to: localhost
 
     - name: copy running configs to ios-config-archives
-      command: "cp -f /tmp/running_config/{{inventory_hostname}}.cfg /tmp/ios-config-archives/{{inventory_hostname}}_master.cfg"
+      command: "cp -f {{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg {{ playbook_dir}}/ios-config-archives/{{inventory_hostname}}_master.cfg"
       delegate_to: localhost
 
     #TODO: replace with an API call to do a git push
