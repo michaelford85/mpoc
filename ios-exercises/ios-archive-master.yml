@@ -32,14 +32,14 @@
 
     - name: Remove non-config lines - Regular Expression
       lineinfile:
-        path: /tmp/running_config/{{inventory_hostname}}.cfg
+        path: "{{ playbook_dir}}/running_config/{{inventory_hostname}}.cfg"
         regexp: 'Current configuration.*'
         state: absent
 
     - name: clone configuration archives to ansible control
       git:
         repo: "{{ git_repo_path }}"
-        dest: /tmp/ios-config-archives
+        dest: "{{ playbook_dir}}/ios-config-archives"
         clone: yes
         force: yes
       run_once: yes
