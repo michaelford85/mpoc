@@ -7,13 +7,13 @@
     default_vars.yml
 
   tasks:
-    - name: Ensure ios-config-archives directory is absent
-      file:
-        path: "{{ playbook_dir }}/ios-config-archives"
-        state: absent
-      run_once: yes
-      delegate_to: localhost
-      become: yes
+    # - name: Ensure ios-config-archives directory is absent
+    #   file:
+    #     path: "{{ playbook_dir }}/ios-config-archives"
+    #     state: absent
+    #   run_once: yes
+    #   delegate_to: localhost
+    #   become: yes
 
     - name: clone configuration archives to ansible control
       git:
