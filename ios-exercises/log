@@ -51048,3 +51048,161 @@ This error can be suppressed as a warning using the "invalid_task_attribute_fail
 2018-11-16 12:36:01,530 p=17752 u=mford |  rtr2                       : ok=0    changed=0    unreachable=0    failed=1   
 2018-11-16 12:36:01,530 p=17752 u=mford |  rtr3                       : ok=0    changed=0    unreachable=0    failed=1   
 2018-11-16 12:36:01,530 p=17752 u=mford |  rtr4                       : ok=0    changed=0    unreachable=0    failed=1   
+2018-11-19 11:04:15,517 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-19 11:04:15,525 p=25035 u=mford |  PLAY [cisco] **********************************************************************************************************
+2018-11-19 11:04:15,542 p=25035 u=mford |  TASK [Change Hostname] ************************************************************************************************
+2018-11-19 11:04:16,828 p=25043 u=mford |  network_os is set to ios
+2018-11-19 11:04:17,043 p=25050 u=mford | paramiko [54.175.155.7] starting thread (client mode): 0x1b5cf50L
+2018-11-19 11:04:17,044 p=25050 u=mford | paramiko [54.175.155.7] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-19 11:04:17,105 p=25050 u=mford | paramiko [54.175.155.7] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-19 11:04:17,105 p=25050 u=mford | paramiko [54.175.155.7] Connected (version 2.0, client Cisco-1.25)
+2018-11-19 11:04:17,111 p=25050 u=mford | paramiko [54.175.155.7] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-19 11:04:17,111 p=25050 u=mford | paramiko [54.175.155.7] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-19 11:04:17,112 p=25050 u=mford | paramiko [54.175.155.7] HostKey agreed: ssh-rsa
+2018-11-19 11:04:17,112 p=25050 u=mford | paramiko [54.175.155.7] Cipher agreed: aes128-ctr
+2018-11-19 11:04:17,113 p=25050 u=mford | paramiko [54.175.155.7] MAC agreed: hmac-sha2-256
+2018-11-19 11:04:17,113 p=25050 u=mford | paramiko [54.175.155.7] Compression agreed: none
+2018-11-19 11:04:17,434 p=25050 u=mford | paramiko [54.175.155.7] Got server p (2048 bits)
+2018-11-19 11:04:17,600 p=25050 u=mford | paramiko [54.175.155.7] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-19 11:04:17,602 p=25050 u=mford | paramiko [54.175.155.7] Switch to new keys ...
+2018-11-19 11:04:17,617 p=25050 u=mford | paramiko [54.175.155.7] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-19 11:04:17,947 p=25050 u=mford | paramiko [54.175.155.7] userauth is OK
+2018-11-19 11:04:18,052 p=25050 u=mford | paramiko [54.175.155.7] Authentication (publickey) successful!
+2018-11-19 11:04:18,054 p=25050 u=mford | paramiko [54.175.155.7] [chan 0] Max packet in: 32768 bytes
+2018-11-19 11:04:18,127 p=25050 u=mford | paramiko [54.175.155.7] [chan 0] Max packet out: 4096 bytes
+2018-11-19 11:04:18,128 p=25050 u=mford | paramiko [54.175.155.7] Secsh channel 0 opened.
+2018-11-19 11:04:18,231 p=25050 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:04:18,303 p=25050 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:04:20,763 p=25035 u=mford |  changed: [rtr1]
+2018-11-19 11:04:20,767 p=25050 u=mford | paramiko [54.175.155.7] [chan 0] EOF sent (0)
+2018-11-19 11:04:20,804 p=25050 u=mford | paramiko [54.175.155.7] EOF in transport thread
+2018-11-19 11:04:20,836 p=25035 u=mford |  PLAY RECAP ************************************************************************************************************
+2018-11-19 11:04:20,837 p=25035 u=mford |  rtr1                       : ok=1    changed=1    unreachable=0    failed=0   
+2018-11-19 11:04:20,935 p=25043 u=mford |  shutdown complete
+2018-11-19 11:04:54,671 p=25073 u=mford |   [WARNING]: Could not match supplied host pattern, ignoring: rtr1
+
+2018-11-19 11:04:54,672 p=25073 u=mford |  ERROR! Specified hosts and/or --limit does not match any hosts
+2018-11-19 11:04:58,888 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-19 11:04:58,898 p=25079 u=mford |  PLAY [cisco] **********************************************************************************************************
+2018-11-19 11:04:58,918 p=25079 u=mford |  TASK [Change Hostname] ************************************************************************************************
+2018-11-19 11:05:00,218 p=25086 u=mford |  network_os is set to ios
+2018-11-19 11:05:00,391 p=25094 u=mford | paramiko [54.175.155.7] starting thread (client mode): 0x46d5f50L
+2018-11-19 11:05:00,391 p=25094 u=mford | paramiko [54.175.155.7] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-19 11:05:00,464 p=25094 u=mford | paramiko [54.175.155.7] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-19 11:05:00,465 p=25094 u=mford | paramiko [54.175.155.7] Connected (version 2.0, client Cisco-1.25)
+2018-11-19 11:05:00,471 p=25094 u=mford | paramiko [54.175.155.7] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-19 11:05:00,471 p=25094 u=mford | paramiko [54.175.155.7] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-19 11:05:00,472 p=25094 u=mford | paramiko [54.175.155.7] HostKey agreed: ssh-rsa
+2018-11-19 11:05:00,472 p=25094 u=mford | paramiko [54.175.155.7] Cipher agreed: aes128-ctr
+2018-11-19 11:05:00,473 p=25094 u=mford | paramiko [54.175.155.7] MAC agreed: hmac-sha2-256
+2018-11-19 11:05:00,473 p=25094 u=mford | paramiko [54.175.155.7] Compression agreed: none
+2018-11-19 11:05:00,812 p=25094 u=mford | paramiko [54.175.155.7] Got server p (2048 bits)
+2018-11-19 11:05:00,967 p=25094 u=mford | paramiko [54.175.155.7] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-19 11:05:00,970 p=25094 u=mford | paramiko [54.175.155.7] Switch to new keys ...
+2018-11-19 11:05:00,992 p=25094 u=mford | paramiko [54.175.155.7] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-19 11:05:01,294 p=25094 u=mford | paramiko [54.175.155.7] userauth is OK
+2018-11-19 11:05:01,389 p=25094 u=mford | paramiko [54.175.155.7] Authentication (publickey) successful!
+2018-11-19 11:05:01,396 p=25094 u=mford | paramiko [54.175.155.7] [chan 0] Max packet in: 32768 bytes
+2018-11-19 11:05:01,471 p=25094 u=mford | paramiko [54.175.155.7] [chan 0] Max packet out: 4096 bytes
+2018-11-19 11:05:01,472 p=25094 u=mford | paramiko [54.175.155.7] Secsh channel 0 opened.
+2018-11-19 11:05:01,556 p=25094 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:05:01,619 p=25094 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:05:04,102 p=25079 u=mford |  changed: [rtr12]
+2018-11-19 11:05:04,106 p=25094 u=mford | paramiko [54.175.155.7] [chan 0] EOF sent (0)
+2018-11-19 11:05:04,144 p=25094 u=mford | paramiko [54.175.155.7] EOF in transport thread
+2018-11-19 11:05:04,172 p=25079 u=mford |  PLAY RECAP ************************************************************************************************************
+2018-11-19 11:05:04,172 p=25079 u=mford |  rtr12                      : ok=1    changed=1    unreachable=0    failed=0   
+2018-11-19 11:05:04,272 p=25086 u=mford |  shutdown complete
+2018-11-19 11:08:09,774 p=25147 u=mford |  ERROR! Syntax Error while loading YAML.
+  mapping values are not allowed here
+
+The error appears to have been in '/Users/mford/Documents/github-workspace/mpoc/ios-exercises/ios_change_hostname.yml': line 10, column 29, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    debug:
+      msg: Inventory name is: "{{ inventory_hostname }}"
+                            ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2018-11-19 11:08:26,371 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-19 11:08:26,380 p=25157 u=mford |  PLAY [cisco] **********************************************************************************************************
+2018-11-19 11:08:26,394 p=25157 u=mford |  TASK [Check Hostname] *************************************************************************************************
+2018-11-19 11:08:27,693 p=25164 u=mford |  network_os is set to ios
+2018-11-19 11:08:27,865 p=25171 u=mford | paramiko [54.175.155.7] starting thread (client mode): 0x7750f50L
+2018-11-19 11:08:27,865 p=25171 u=mford | paramiko [54.175.155.7] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-19 11:08:27,927 p=25171 u=mford | paramiko [54.175.155.7] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-19 11:08:27,928 p=25171 u=mford | paramiko [54.175.155.7] Connected (version 2.0, client Cisco-1.25)
+2018-11-19 11:08:27,934 p=25171 u=mford | paramiko [54.175.155.7] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-19 11:08:27,934 p=25171 u=mford | paramiko [54.175.155.7] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-19 11:08:27,935 p=25171 u=mford | paramiko [54.175.155.7] HostKey agreed: ssh-rsa
+2018-11-19 11:08:27,935 p=25171 u=mford | paramiko [54.175.155.7] Cipher agreed: aes128-ctr
+2018-11-19 11:08:27,935 p=25171 u=mford | paramiko [54.175.155.7] MAC agreed: hmac-sha2-256
+2018-11-19 11:08:27,935 p=25171 u=mford | paramiko [54.175.155.7] Compression agreed: none
+2018-11-19 11:08:28,250 p=25171 u=mford | paramiko [54.175.155.7] Got server p (2048 bits)
+2018-11-19 11:08:28,413 p=25171 u=mford | paramiko [54.175.155.7] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-19 11:08:28,414 p=25171 u=mford | paramiko [54.175.155.7] Switch to new keys ...
+2018-11-19 11:08:28,423 p=25171 u=mford | paramiko [54.175.155.7] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-19 11:08:28,779 p=25171 u=mford | paramiko [54.175.155.7] userauth is OK
+2018-11-19 11:08:28,855 p=25171 u=mford | paramiko [54.175.155.7] Authentication (publickey) successful!
+2018-11-19 11:08:28,859 p=25171 u=mford | paramiko [54.175.155.7] [chan 0] Max packet in: 32768 bytes
+2018-11-19 11:08:28,940 p=25171 u=mford | paramiko [54.175.155.7] [chan 0] Max packet out: 4096 bytes
+2018-11-19 11:08:28,940 p=25171 u=mford | paramiko [54.175.155.7] Secsh channel 0 opened.
+2018-11-19 11:08:29,039 p=25171 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:08:29,112 p=25171 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:08:30,109 p=25157 u=mford |  ok: [rtr12] => {
+    "msg": "Inventory name is: rtr12"
+}
+2018-11-19 11:08:30,129 p=25157 u=mford |  TASK [Change Hostname] ************************************************************************************************
+2018-11-19 11:08:32,949 p=25157 u=mford |  ok: [rtr12]
+2018-11-19 11:08:32,954 p=25171 u=mford | paramiko [54.175.155.7] [chan 0] EOF sent (0)
+2018-11-19 11:08:33,053 p=25171 u=mford | paramiko [54.175.155.7] EOF in transport thread
+2018-11-19 11:08:33,073 p=25157 u=mford |  PLAY RECAP ************************************************************************************************************
+2018-11-19 11:08:33,073 p=25157 u=mford |  rtr12                      : ok=2    changed=0    unreachable=0    failed=0   
+2018-11-19 11:08:33,173 p=25164 u=mford |  shutdown complete
+2018-11-19 11:17:09,351 passlib.registry registered 'md5_crypt' handler: <class 'passlib.handlers.md5_crypt.md5_crypt'>
+2018-11-19 11:17:09,361 p=25338 u=mford |  PLAY [cisco] **********************************************************************************************************
+2018-11-19 11:17:09,375 p=25338 u=mford |  TASK [Check Hostname] *************************************************************************************************
+2018-11-19 11:17:10,602 p=25347 u=mford |  network_os is set to ios
+2018-11-19 11:17:10,777 p=25354 u=mford | paramiko [54.175.155.7] starting thread (client mode): 0xa13cf50L
+2018-11-19 11:17:10,777 p=25354 u=mford | paramiko [54.175.155.7] Local version/idstring: SSH-2.0-paramiko_2.4.1
+2018-11-19 11:17:10,845 p=25354 u=mford | paramiko [54.175.155.7] Remote version/idstring: SSH-2.0-Cisco-1.25
+2018-11-19 11:17:10,846 p=25354 u=mford | paramiko [54.175.155.7] Connected (version 2.0, client Cisco-1.25)
+2018-11-19 11:17:10,847 p=25354 u=mford | paramiko [54.175.155.7] kex algos:[u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr'] client mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] server mac:[u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1', u'hmac-sha1-96'] client compress:[u'none'] server compress:[u'none'] client lang:[u''] server lang:[u''] kex follows?False
+2018-11-19 11:17:10,848 p=25354 u=mford | paramiko [54.175.155.7] Kex agreed: diffie-hellman-group-exchange-sha1
+2018-11-19 11:17:10,849 p=25354 u=mford | paramiko [54.175.155.7] HostKey agreed: ssh-rsa
+2018-11-19 11:17:10,849 p=25354 u=mford | paramiko [54.175.155.7] Cipher agreed: aes128-ctr
+2018-11-19 11:17:10,850 p=25354 u=mford | paramiko [54.175.155.7] MAC agreed: hmac-sha2-256
+2018-11-19 11:17:10,851 p=25354 u=mford | paramiko [54.175.155.7] Compression agreed: none
+2018-11-19 11:17:11,246 p=25354 u=mford | paramiko [54.175.155.7] Got server p (2048 bits)
+2018-11-19 11:17:11,449 p=25354 u=mford | paramiko [54.175.155.7] kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+2018-11-19 11:17:11,450 p=25354 u=mford | paramiko [54.175.155.7] Switch to new keys ...
+2018-11-19 11:17:11,475 p=25354 u=mford | paramiko [54.175.155.7] Trying discovered key 5860cb62f838518832112aeafcc061d7 in /Users/mford/.ssh/MAF-ios-demo-private.pem
+2018-11-19 11:17:11,863 p=25354 u=mford | paramiko [54.175.155.7] userauth is OK
+2018-11-19 11:17:11,965 p=25354 u=mford | paramiko [54.175.155.7] Authentication (publickey) successful!
+2018-11-19 11:17:11,980 p=25354 u=mford | paramiko [54.175.155.7] [chan 0] Max packet in: 32768 bytes
+2018-11-19 11:17:12,080 p=25354 u=mford | paramiko [54.175.155.7] [chan 0] Max packet out: 4096 bytes
+2018-11-19 11:17:12,081 p=25354 u=mford | paramiko [54.175.155.7] Secsh channel 0 opened.
+2018-11-19 11:17:12,183 p=25354 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:17:12,285 p=25354 u=mford | paramiko [54.175.155.7] [chan 0] Sesch channel 0 request ok
+2018-11-19 11:17:13,365 p=25338 u=mford |  ok: [rtr12] => {
+    "msg": "Inventory name is: rtr12"
+}
+2018-11-19 11:17:13,381 p=25338 u=mford |  TASK [Change Hostname] ************************************************************************************************
+2018-11-19 11:17:16,117 p=25338 u=mford |  ok: [rtr12]
+2018-11-19 11:17:16,120 p=25354 u=mford | paramiko [54.175.155.7] [chan 0] EOF sent (0)
+2018-11-19 11:17:16,134 p=25354 u=mford | paramiko [54.175.155.7] EOF in transport thread
+2018-11-19 11:17:16,138 p=25338 u=mford |  PLAY RECAP ************************************************************************************************************
+2018-11-19 11:17:16,138 p=25338 u=mford |  rtr12                      : ok=2    changed=0    unreachable=0    failed=0   
+2018-11-19 11:17:16,238 p=25347 u=mford |  shutdown complete

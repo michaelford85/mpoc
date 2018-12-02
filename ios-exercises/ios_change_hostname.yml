@@ -5,9 +5,14 @@
 
   tasks:
 
+  - name: Check Hostname
+    debug:
+      msg: "Inventory name is: {{ inventory_hostname }}"
+
+
   - name: Change Hostname
     ios_config:
-      lines: hostname {{ new_hostname }}
+      lines: hostname {{ inventory_hostname }}
   #
   # - name: Backup current config
   #   ios_config:
